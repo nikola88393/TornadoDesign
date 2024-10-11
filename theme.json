@@ -1,0 +1,8 @@
+{
+  "components": {
+    "Layout": {
+      "headerBg": "rgb(245,245,245)",
+      "headerColor": "rgb(245,245,245)"
+    }
+  }
+}

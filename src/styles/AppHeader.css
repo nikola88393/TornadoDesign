@@ -1,0 +1,35 @@
+.menu-desktop-container {
+  display: block;
+  width: 100%;
+}
+.menu-mobile-container {
+  display: none;
+  width: 100%;
+}
+.menu-desktop {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.ant-layout-header {
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .menu-desktop-container {
+    display: none;
+  }
+
+  .menu-mobile-container {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+}
