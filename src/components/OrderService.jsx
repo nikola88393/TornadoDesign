@@ -1,4 +1,5 @@
-import { Button, DatePicker, Form, TreeSelect, Select } from "antd";
+import { Button, DatePicker, Form, Select, Space } from "antd";
+import { useState } from "react";
 
 const services = [
   { label: "Основно почистване", value: "deep_cleaning" },
@@ -58,38 +59,99 @@ const countries = [
   },
 ];
 const OrderService = () => {
+  const [selectedCountry, setSelectedCountry] = useState(countries[0].value);
+
+  const handleCountryChange = (value) => {
+    setSelectedCountry(value);
+    console.log(value);
+  };
   return (
+    // <Card
+    //   title="Запазете час сега!"
+    //   style={{
+    //     width: 350,
+    //     display: "flex",
+    //     flexDirection: "column",
+    //     alignItems: "center",
+    //   }}
+    // >
     <Form
-      labelCol={{
-        span: 4,
-      }}
-      wrapperCol={{
-        span: 14,
-      }}
-      layout="horizontal"
+      // labelCol={{
+      //   span: 4,
+      // }}
+      // wrapperCol={{
+      //   span: 14,
+      // }}
+      layout="vertical"
       size="large"
       style={{
-        maxWidth: 600,
+        width: 280,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Form.Item label="Локация">
-        <TreeSelect treeData={countries} />
+        <Space.Compact>
+          <Form.Item
+            name={["address", "city"]}
+            noStyle
+            rules={[
+              {
+                required: true,
+                message: "Province is required",
+              },
+            ]}
+          >
+            <Select
+              placeholder="Избери град"
+              onChange={handleCountryChange}
+              defaultValue={countries[0].value}
+            >
+              {countries.map((country) => {
+                return (
+                  <Select.Option key={country.value} value={country.value}>
+                    {country.title}
+                  </Select.Option>
+                );
+              })}
+            </Select>
+          </Form.Item>
+          <Form.Item
+            name={["address", "area"]}
+            noStyle
+            rules={[
+              {
+                required: true,
+                message: "Street is required",
+              },
+            ]}
+          >
+            <Select placeholder="Квартал" style={{ width: "100%" }}>
+              {selectedCountry &&
+                countries
+                  .find((country) => country.value === selectedCountry)
+                  .children.map((area) => {
+                    return (
+                      <Select.Option key={area.value} value={area.value}>
+                        {area.title}
+                      </Select.Option>
+                    );
+                  })}
+            </Select>
+          </Form.Item>
+        </Space.Compact>
       </Form.Item>
       <Form.Item label="Дата">
         <DatePicker />
       </Form.Item>
       <Form.Item label="Услуга">
-        <Select
-          style={{
-            width: 350,
-          }}
-          options={services}
-        />
+        <Select style={{}} options={services} />
       </Form.Item>
       <Form.Item>
         <Button type="primary">Запиши</Button>
       </Form.Item>
     </Form>
+    // </Card>
   );
 };
 export default OrderService;

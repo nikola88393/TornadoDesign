@@ -1,0 +1,10 @@
+:root {
+  --accent-blue: #1290cb;
+}
+
+@media (max-width: 768px) {
+  .logo-big-contaier {
+    /* display: none; */
+    width: 300px;
+  }
+}
