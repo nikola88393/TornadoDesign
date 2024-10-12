@@ -70,7 +70,7 @@ const services = [
   },
 ];
 
-const CleaningServicesMenu = () => {
+const CleaningServicesCards = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
@@ -85,7 +85,8 @@ const CleaningServicesMenu = () => {
   };
 
   return (
-    <div>
+    <div style={{ padding: "0 100px" }}>
+      <h1>Всички наши услуги</h1>
       <Row gutter={[16, 16]}>
         {services.map((service) => (
           <Col xs={24} sm={12} md={8} key={service.key}>
@@ -111,7 +112,7 @@ const CleaningServicesMenu = () => {
         open={isModalVisible}
         onCancel={handleCancel}
         footer={[
-          <Button key="close" onClick={handleCancel}>
+          <Button type="primary" danger key="close" onClick={handleCancel}>
             Затвори
           </Button>,
         ]}
@@ -122,4 +123,4 @@ const CleaningServicesMenu = () => {
   );
 };
 
-export default CleaningServicesMenu;
+export default CleaningServicesCards;

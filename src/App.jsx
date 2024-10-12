@@ -1,10 +1,13 @@
-import { Layout, ConfigProvider } from "antd";
+import { Layout, ConfigProvider, Divider } from "antd";
 import AppHeader from "./components/AppHeader";
 import {} from "antd";
 import OrderService from "./components/OrderService";
-// import logo_big from "./assets/tornado_logo_big.png";
+import logo_big from "./assets/tornado_logo_big.png";
 import "./styles/main.css";
 import CleaningServicesMenu from "./components/CleaningServicesMenu";
+import ServicesTabs from "./components/CleaningServicesTable";
+import WhyChooseServices from "./components/WhyChooseServices";
+import AboutUs from "./components/AboutUs";
 const { Header, Footer, Content } = Layout;
 
 const App = () => {
@@ -36,19 +39,36 @@ const App = () => {
             paddingBlock: "50px",
           }}
         >
-          {/* <div
-            className="logo-big-container"
+          <div
             style={{
-              display: "flex",
-              flexDirection: "column",
+              display: " flex",
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "space-around",
+              flexWrap: "wrap",
+              width: "100%",
             }}
           >
-            <img src={logo_big} alt="logo" />
-          </div> */}
-          <OrderService />
+            <div
+              className="logo-big-container"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img src={logo_big} alt="logo" />
+            </div>
+            <OrderService />
+          </div>
+          <Divider />
           <CleaningServicesMenu />
+          <Divider />
+          <ServicesTabs />
+          <Divider />
+          <WhyChooseServices />
+          <Divider />
+          <AboutUs />
         </Content>
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©2018 Created by Ant UED
