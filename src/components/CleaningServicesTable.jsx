@@ -96,8 +96,7 @@ const otherServices = [
 // Main component rendering tabs and tables
 const ServicesTabs = () => {
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Цени на услугите</h1>
+    <div>
       <Tabs defaultActiveKey="1" centered>
         <TabPane tab="Почистване" key="1">
           <Table

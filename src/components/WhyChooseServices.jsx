@@ -31,7 +31,6 @@ const WhyChooseServices = () => {
   return (
     <>
       <Flex align="center" vertical style={{ marginBottom: "30px" }}>
-        <h1 className="reasons-to-choose-title">Защо да изберете нас?</h1>
         <img
           className="reasons-title-icon"
           src={arrow}

@@ -18,7 +18,6 @@ const AboutUs = () => {
         lg={10} // Slightly less than half width on large screens (desktop)
       >
         <div className="about-us-content">
-          <h1 className="about-us-title">Кои сме ние?</h1>
           <p style={{ fontSize: "17px", textAlign: "justify" }}>
             Ние сме фирма започнала дейността си в сферата на почистването през
             2016 г. в Лондон. През 2018 г. стъпихме на българския пазар под

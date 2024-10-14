@@ -1,8 +1,6 @@
-import { Card, Modal, Row, Col, Button } from "antd";
+import { Card, Modal, Button } from "antd";
 import { HomeOutlined, CarOutlined, ShopOutlined } from "@ant-design/icons";
 import { useState } from "react";
-
-const { Meta } = Card;
 
 const services = [
   {
@@ -85,28 +83,22 @@ const CleaningServicesCards = () => {
   };
 
   return (
-    <div style={{ padding: "0 100px" }}>
-      <h1>Всички наши услуги</h1>
-      <Row gutter={[16, 16]}>
+    <>
+      <Card style={{ maxWidth: "1500px" }}>
         {services.map((service) => (
-          <Col xs={24} sm={12} md={8} key={service.key}>
-            <Card
-              hoverable
-              onClick={() => showModal(service)}
-              cover={
-                <div style={{ textAlign: "center", padding: "20px" }}>
-                  <service.icon
-                    style={{ fontSize: "48px", color: "#1290cb" }}
-                  />
-                </div>
-              }
-            >
-              <Meta title={service.title} />
-            </Card>
-          </Col>
+          <Card.Grid
+            className="service-card-grid"
+            key={service.key}
+            hoverable
+            onClick={() => showModal(service)}
+          >
+            <div style={{ paddingBottom: "16px" }}>
+              <service.icon style={{ fontSize: "48px", color: "#1290cb" }} />
+            </div>
+            <h2>{service.title}</h2>
+          </Card.Grid>
         ))}
-      </Row>
-
+      </Card>
       <Modal
         title={selectedService?.title}
         open={isModalVisible}
@@ -119,7 +111,7 @@ const CleaningServicesCards = () => {
       >
         <p>{selectedService?.description}</p>
       </Modal>
-    </div>
+    </>
   );
 };
 

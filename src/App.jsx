@@ -1,10 +1,12 @@
 import { Layout, ConfigProvider, Divider } from "antd";
 import AppHeader from "./components/AppHeader";
-import {} from "antd";
 import OrderService from "./components/OrderService";
-import "./styles/main.css";
 import WhyChooseServices from "./components/WhyChooseServices";
+import CleaningServicesMenu from "./components/CleaningServicesMenu";
+import CleaningServicesTable from "./components/CleaningServicesTable";
 import AboutUs from "./components/AboutUs";
+import "./styles/main.css";
+
 const { Header, Footer, Content } = Layout;
 
 const App = () => {
@@ -45,30 +47,25 @@ const App = () => {
               width: "100%",
             }}
           >
-            {/* <div
-              className="logo-big-container"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                width: "100px",
-                border: "1px solid red",
-              }}
-            >
-              <img style={{ width: "300px" }} src={logo_big} alt="logo" />
-            </div> */}
             <OrderService />
           </div>
-          <Divider />
-          {/* <CleaningServicesMenu /> */}
-          <Divider />
-          {/* <ServicesTabs /> */}
-          <Divider />
+          <Divider style={{ margin: "50px 0" }}>
+            <h1>Всички наши услуги</h1>
+          </Divider>
+          <CleaningServicesMenu />
+          <Divider style={{ margin: "50px 0" }}>
+            <h1>Защо да изберете нас?</h1>
+          </Divider>
           <WhyChooseServices />
-          <Divider />
+          <Divider style={{ margin: "50px 0" }}>
+            <h1>Кои сме ние?</h1>
+          </Divider>
           <AboutUs />
         </Content>
+        <Divider style={{ margin: "50px 0" }}>
+          <h1>Цени на услугите</h1>
+        </Divider>
+        <CleaningServicesTable />
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©2018 Created by Ant UED
         </Footer>
