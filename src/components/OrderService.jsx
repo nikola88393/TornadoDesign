@@ -1,24 +1,57 @@
 import { Button, DatePicker, Form, Select, Space } from "antd";
+// import { options } from "less";
 import { useState } from "react";
 
-const services = [
-  { label: "Основно почистване", value: "deep_cleaning" },
-  { label: "Почистване след ремонт", value: "post_renovation_cleaning" },
+// const services = [
+//   { label: "Основно почистване", value: "deep_cleaning" },
+//   { label: "Почистване след ремонт", value: "post_renovation_cleaning" },
+//   {
+//     label: "Пране на мека мебел и килими на място",
+//     value: "upholstery_and_rug_cleaning",
+//   },
+//   { label: "Експресно почистване", value: "express_cleaning" },
+//   { label: "Пране на автотапицерия", value: "car_upholstery_cleaning" },
+//   {
+//     label: "Полиране на фарове и поставяне на защитно фолио",
+//     value: "headlight_polishing",
+//   },
+//   { label: "Хамалски услуги", value: "moving_services" },
+//   { label: "Изхвърляне на боклук", value: "junk_removal" },
+//   { label: "Пренасяне на багаж", value: "luggage_transport" },
+//   { label: "Градинарски услуги", value: "gardening_services" },
+//   { label: "Борба с насекоми и вредители", value: "pest_control" },
+// ];
+
+const servicesTest = [
   {
-    label: "Пране на мека мебел и килими на място",
-    value: "upholstery_and_rug_cleaning",
+    label: <span>Основни</span>,
+    title: "manager",
+    options: [
+      { label: "Основно почистване", value: "deep_cleaning" },
+      { label: "Почистване след ремонт", value: "post_renovation_cleaning" },
+      {
+        label: "Пране на мека мебел и килими на място",
+        value: "upholstery_and_rug_cleaning",
+      },
+      { label: "Експресно почистване", value: "express_cleaning" },
+      { label: "Пране на автотапицерия", value: "car_upholstery_cleaning" },
+      {
+        label: "Полиране на фарове и поставяне на защитно фолио",
+        value: "headlight_polishing",
+      },
+    ],
   },
-  { label: "Експресно почистване", value: "express_cleaning" },
-  { label: "Пране на автотапицерия", value: "car_upholstery_cleaning" },
   {
-    label: "Полиране на фарове и поставяне на защитно фолио",
-    value: "headlight_polishing",
+    label: <span>Допълнителни</span>,
+    title: "manager",
+    options: [
+      { label: "Хамалски услуги", value: "moving_services" },
+      { label: "Изхвърляне на боклук", value: "junk_removal" },
+      { label: "Пренасяне на багаж", value: "luggage_transport" },
+      { label: "Градинарски услуги", value: "gardening_services" },
+      { label: "Борба с насекоми и вредители", value: "pest_control" },
+    ],
   },
-  { label: "Хамалски услуги", value: "moving_services" },
-  { label: "Изхвърляне на боклук", value: "junk_removal" },
-  { label: "Пренасяне на багаж", value: "luggage_transport" },
-  { label: "Градинарски услуги", value: "gardening_services" },
-  { label: "Борба с насекоми и вредители", value: "pest_control" },
 ];
 const countries = [
   {
@@ -66,22 +99,7 @@ const OrderService = () => {
     console.log(value);
   };
   return (
-    // <Card
-    //   title="Запазете час сега!"
-    //   style={{
-    //     width: 350,
-    //     display: "flex",
-    //     flexDirection: "column",
-    //     alignItems: "center",
-    //   }}
-    // >
     <Form
-      // labelCol={{
-      //   span: 4,
-      // }}
-      // wrapperCol={{
-      //   span: 14,
-      // }}
       layout="vertical"
       size="large"
       style={{
@@ -145,7 +163,7 @@ const OrderService = () => {
         <DatePicker />
       </Form.Item>
       <Form.Item label="Услуга">
-        <Select style={{}} options={services} />
+        <Select style={{}} options={servicesTest} />
       </Form.Item>
       <Form.Item>
         <Button type="primary">Запиши</Button>
