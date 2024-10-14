@@ -14,6 +14,7 @@ const App = () => {
     <ConfigProvider
       theme={{
         token: {
+          fontFamily: "Montserrat, sans-serif",
           Layout: {
             headerBg: "#ffffff",
             headerColor: "#ffffff",
@@ -49,7 +50,7 @@ const App = () => {
           >
             <OrderService />
           </div>
-          <Divider style={{ margin: "50px 0" }}>
+          <Divider className="text-raleway" style={{ margin: "50px 0" }}>
             <h1>Всички наши услуги</h1>
           </Divider>
           <CleaningServicesMenu />

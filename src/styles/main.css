@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* .text-raleway {
+  font-family: "Raleway", sans-serif;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.ant-typography-title,
+.ant-card-head-title,
+.ant-modal-title {
+  font-family: "Raleway", sans-serif !important; /* For headings */
+}
 @media (max-width: 768px) {
   .logo-big-contaier {
     /* display: none; */
