@@ -48,23 +48,25 @@ const App = () => {
               width: "100%",
             }}
           >
-            <div
+            {/* <div
               className="logo-big-container"
               style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                width: "100px",
+                border: "1px solid red",
               }}
             >
-              <img src={logo_big} alt="logo" />
-            </div>
+              <img style={{ width: "300px" }} src={logo_big} alt="logo" />
+            </div> */}
             <OrderService />
           </div>
           <Divider />
-          <CleaningServicesMenu />
+          {/* <CleaningServicesMenu /> */}
           <Divider />
-          <ServicesTabs />
+          {/* <ServicesTabs /> */}
           <Divider />
           <WhyChooseServices />
           <Divider />
