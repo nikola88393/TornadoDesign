@@ -3,7 +3,7 @@ import AppHeader from "./components/AppHeader";
 import OrderService from "./components/OrderService";
 import WhyChooseServices from "./components/WhyChooseServices";
 import CleaningServicesMenu from "./components/CleaningServicesMenu";
-import CleaningServicesTable from "./components/CleaningServicesTable";
+// import CleaningServicesTable from "./components/CleaningServicesTable";
 import AboutUs from "./components/AboutUs";
 import "./styles/main.css";
 
@@ -51,11 +51,11 @@ const App = () => {
             <OrderService />
           </div>
           <Divider className="text-raleway" style={{ margin: "50px 0" }}>
-            <h1>Всички наши услуги</h1>
+            <h1>Нашите услуги</h1>
           </Divider>
           <CleaningServicesMenu />
           <Divider style={{ margin: "50px 0" }}>
-            <h1>Защо да изберете нас?</h1>
+            <h1>Защо нас?</h1>
           </Divider>
           <WhyChooseServices />
           <Divider style={{ margin: "50px 0" }}>
@@ -63,10 +63,11 @@ const App = () => {
           </Divider>
           <AboutUs />
         </Content>
-        <Divider style={{ margin: "50px 0" }}>
+        {/* Pricing tables might not be needed */}
+        {/* <Divider style={{ margin: "50px 0" }}>
           <h1>Цени на услугите</h1>
         </Divider>
-        <CleaningServicesTable />
+        <CleaningServicesTable /> */}
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©2018 Created by Ant UED
         </Footer>
