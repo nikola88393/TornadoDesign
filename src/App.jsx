@@ -6,6 +6,7 @@ import CleaningServicesMenu from "./components/CleaningServicesMenu";
 // import CleaningServicesTable from "./components/CleaningServicesTable";
 import AboutUs from "./components/AboutUs";
 import "./styles/main.css";
+import AppFooter from "./components/AppFooter";
 
 const { Header, Footer, Content } = Layout;
 
@@ -63,13 +64,13 @@ const App = () => {
           </Divider>
           <AboutUs />
         </Content>
-        {/* Pricing tables might not be needed */}
-        {/* <Divider style={{ margin: "50px 0" }}>
-          <h1>Цени на услугите</h1>
-        </Divider>
-        <CleaningServicesTable /> */}
-        <Footer style={{ textAlign: "center" }}>
-          Ant Design ©2018 Created by Ant UED
+        <Footer
+          style={{
+            borderTop: "1px solid rgba(5, 5, 5, 0.06)",
+            backgroundColor: "#ffffff",
+          }}
+        >
+          <AppFooter />
         </Footer>
       </Layout>
     </ConfigProvider>
