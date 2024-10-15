@@ -7,6 +7,7 @@ import CleaningServicesMenu from "./components/CleaningServicesMenu";
 import AboutUs from "./components/AboutUs";
 import "./styles/main.css";
 import AppFooter from "./components/AppFooter";
+import ContactUs from "./components/ContactUs";
 
 const { Header, Footer, Content } = Layout;
 
@@ -16,6 +17,7 @@ const App = () => {
       theme={{
         token: {
           fontFamily: "Montserrat, sans-serif",
+          colorPrimary: "#1290cb",
           Layout: {
             headerBg: "#ffffff",
             headerColor: "#ffffff",
@@ -63,6 +65,10 @@ const App = () => {
             <h1>Кои сме ние?</h1>
           </Divider>
           <AboutUs />
+          <Divider style={{ margin: "50px 0" }}>
+            <h1>Контакти</h1>
+          </Divider>
+          <ContactUs />
         </Content>
         <Footer
           style={{
