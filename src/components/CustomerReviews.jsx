@@ -19,14 +19,12 @@ const Reviews = [
 const CustomerReviews = () => {
   return (
     <div style={{ maxWidth: "1000px", marginTop: "50px" }}>
-      <h1 style={{ color: "#1290cb", textAlign: "center" }}>
-        Клиентите за нас
-      </h1>
-      <p style={{ color: "#1290cb", textAlign: "center" }}>
+      <h1 style={{ color: "#1290cb" }}>Клиентите за нас</h1>
+      <p style={{ color: "#1290cb" }}>
         Имаме изградена отлична репутация както в България така и във
         Великобритания.
       </p>
-      <p style={{ color: "#1290cb", textAlign: "center" }}>
+      <p style={{ color: "#1290cb" }}>
         Все повече клиенти ни се доверяват заради нашия професионализъм и
         качество в извършените услуги.
       </p>
@@ -41,12 +39,12 @@ const CustomerReviews = () => {
           <Flex
             style={{ border: "1px solid red", padding: "20px" }}
             key={review.author}
-            align="center"
-            justify="center"
+            // align="center"
+            // justify="center"
           >
             <Divider />
-            <p style={{ textAlign: "center" }}>&quot;{review.text}&quot;</p>
-            <p style={{ textAlign: "center" }}> - {review.author}</p>
+            <p>&quot;{review.text}&quot;</p>
+            <p> - {review.author}</p>
             <Divider />
           </Flex>
         ))}

@@ -1,7 +1,6 @@
 import { Layout, ConfigProvider, Divider } from "antd";
 import AppHeader from "./components/AppHeader";
 import OrderService from "./components/OrderService";
-import WhyChooseServices from "./components/WhyChooseServices";
 import CleaningServicesMenu from "./components/CleaningServicesMenu";
 // import CleaningServicesTable from "./components/CleaningServicesTable";
 import AboutUs from "./components/AboutUs";
@@ -60,10 +59,7 @@ const App = () => {
           <Divider style={{ margin: "50px 0" }}>
             <h1>Защо нас?</h1>
           </Divider>
-          <WhyChooseServices />
-          <Divider style={{ margin: "50px 0" }}>
-            <h1>Кои сме ние?</h1>
-          </Divider>
+          {/* <WhyChooseServices /> */}
           <AboutUs />
           <Divider style={{ margin: "50px 0" }}>
             <h1>Контакти</h1>

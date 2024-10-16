@@ -2,16 +2,18 @@ import { Row, Col } from "antd";
 import "../styles/AboutUs.css";
 import logo_big from "../assets/tornado_logo_big.png";
 import CustomerReviews from "./CustomerReviews";
+import WhyChooseServices from "./WhyChooseServices";
 
 const AboutUs = () => {
   return (
     <>
+      <WhyChooseServices />
       <Row
         gutter={[16, 32]}
         align="middle"
         justify="center"
         wrap
-        style={{ padding: "20px", maxWidth: "1500px" }}
+        style={{ padding: "20px", maxWidth: "1500px", marginTop: "50px" }}
       >
         <Col
           xs={24} // Full width on extra small screens (mobile)
@@ -20,7 +22,8 @@ const AboutUs = () => {
           lg={10} // Slightly less than half width on large screens (desktop)
         >
           <div className="about-us-content">
-            <p style={{ fontSize: "17px", textAlign: "justify" }}>
+            <h1>Кои сме ние?</h1>
+            <p style={{ fontSize: "17px", textAlign: "left" }}>
               Ние сме фирма започнала дейността си в сферата на почистването
               през 2016 г. в Лондон. През 2018 г. стъпихме на българския пазар
               под името Торнадо Клийн.От 2020 г. Торнадо Сървисиз сключи 5
