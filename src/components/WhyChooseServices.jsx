@@ -1,6 +1,7 @@
 import { Row, Col, Flex } from "antd";
-import "../styles/WhyChooseServices.css";
 import arrow from "../assets/arrow-in-the-target.svg";
+import styled from "styled-components";
+
 const reasonsToChooseUs = [
   {
     number: "01",
@@ -27,30 +28,46 @@ const reasonsToChooseUs = [
     text: "Водеща фирма в бранша в България и Великобритания.",
   },
 ];
+
+const ReasonToChooseContainer = styled(Row)`
+  max-width: 1200px;
+  display: flex;
+`;
+const ReasonToChooseNumber = styled.p`
+  border-radius: 50%;
+  background-color: rgba(18, 144, 203, 0.1);
+  color: #1290cb;
+  font-size: 17px;
+  padding: 5px;
+  width: 30px;
+  font-weight: 600;
+`;
+const ReasonToChooseText = styled.p`
+  font-size: 17px;
+`;
+const FlexContainer = styled(Flex)`
+  margin-bottom: 30px;
+`;
 const WhyChooseServices = () => {
   return (
     <>
-      <Flex align="center" vertical style={{ marginBottom: "30px" }}>
-        <img
-          className="reasons-title-icon"
-          src={arrow}
-          alt="arrow in target icon"
-        />
-      </Flex>
-      <Row
-        className="reasons-to-choose-container"
-        gutter={[32, 32]}
-        align="middle"
-      >
+      <FlexContainer align="center" vertical>
+        <img src={arrow} alt="arrow in target icon" />
+      </FlexContainer>
+      <ReasonToChooseContainer gutter={[32, 32]} align="middle">
         {reasonsToChooseUs.map((reason) => (
           <Col key={reason.number} xs={24} sm={12} md={8}>
             <Flex gap={15} align="center">
-              <p className="reason-to-choose-number">{reason.number}</p>
-              <p className="reason-to-choose-text">{reason.text}</p>
+              <ReasonToChooseNumber className="reason-to-choose-number">
+                {reason.number}
+              </ReasonToChooseNumber>
+              <ReasonToChooseText className="reason-to-choose-text">
+                {reason.text}
+              </ReasonToChooseText>
             </Flex>
           </Col>
         ))}
-      </Row>
+      </ReasonToChooseContainer>
     </>
   );
 };

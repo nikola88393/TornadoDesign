@@ -1,9 +1,12 @@
 import { Button, Form, Input } from "antd";
-import "../styles/ContactUsForm.css";
+import styled from "styled-components";
+
+const StyledButton = styled(Button)`
+  width: 100%;
+`;
 
 const ContactUsForm = () => {
   return (
-    // <Flex align="center" justify="space-evenly" wrap style={{ width: "100%" }}>
     <Form className="formContainer">
       <Form.Item
         name="name"
@@ -36,20 +39,11 @@ const ContactUsForm = () => {
         />
       </Form.Item>
       <Form.Item>
-        <Button
-          type="primary"
-          size="large"
-          htmlType="submit"
-          style={{ width: "100%" }}
-        >
+        <StyledButton type="primary" size="large" htmlType="submit">
           Изпрати
-        </Button>
+        </StyledButton>
       </Form.Item>
     </Form>
-    //   <div>
-    //     <img src={contactUsImage} alt="contac us image" />
-    //   </div>
-    // </Flex>
   );
 };
 

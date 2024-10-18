@@ -1,5 +1,5 @@
-import { Carousel, Divider, Flex } from "antd";
-import "../styles/CustomerReviews.css";
+import { Carousel, Divider } from "antd";
+import styled from "styled-components";
 
 const Reviews = [
   {
@@ -16,9 +16,30 @@ const Reviews = [
   },
 ];
 
+const CarouselWrapper = styled.div`
+  max-width: 1000px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+`;
+
+const ReviewSlide = styled.div`
+  border: 1px solid red;
+  padding: 20px;
+`;
+
+const CarouselStyledArrows = styled(Carousel)`
+  &.slick-prev {
+    left: -60px !important;
+  }
+
+  &.slick-next {
+    right: -60px !important;
+  }
+`;
+
 const CustomerReviews = () => {
   return (
-    <div style={{ maxWidth: "1000px", marginTop: "50px" }}>
+    <CarouselWrapper>
       <h1 style={{ color: "#1290cb" }}>Клиентите за нас</h1>
       <p style={{ color: "#1290cb" }}>
         Имаме изградена отлична репутация както в България така и във
@@ -28,28 +49,17 @@ const CustomerReviews = () => {
         Все повече клиенти ни се доверяват заради нашия професионализъм и
         качество в извършените услуги.
       </p>
-      <Carousel
-        infinite
-        style={{ width: "100%", margin: "0 auto" }} // Fully responsive width
-        autoplay
-        arrows
-        autoplaySpeed={5000}
-      >
+      <CarouselStyledArrows infinite autoplay arrows autoplaySpeed={5000}>
         {Reviews.map((review) => (
-          <Flex
-            style={{ border: "1px solid red", padding: "20px" }}
-            key={review.author}
-            // align="center"
-            // justify="center"
-          >
+          <ReviewSlide key={review.author}>
             <Divider />
             <p>&quot;{review.text}&quot;</p>
-            <p> - {review.author}</p>
+            <p>- {review.author}</p>
             <Divider />
-          </Flex>
+          </ReviewSlide>
         ))}
-      </Carousel>
-    </div>
+      </CarouselStyledArrows>
+    </CarouselWrapper>
   );
 };
 

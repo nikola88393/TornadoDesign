@@ -1,6 +1,7 @@
 import { Card, Modal, Flex } from "antd";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 const DotLottieIcon = ({ animationSrc }) => {
   return (
@@ -91,13 +92,17 @@ const services = [
   },
 ];
 
+const StyledCard = styled(Card)`
+  max-width: 1500px;
+  margin: 0 auto;
+`;
+
 const CleaningServicesCards = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
   const [gridWidth, setGridWidth] = useState("33.33%");
 
   const showModal = (service) => {
-    console.log(service);
     setSelectedService(service);
     setIsModalVisible(true);
   };
@@ -110,39 +115,37 @@ const CleaningServicesCards = () => {
   // Function to update grid width based on screen size
   const updateGridWidth = () => {
     if (window.innerWidth <= 768) {
-      setGridWidth("100%"); // 1 card per row for small screens
+      setGridWidth("100%");
     } else if (window.innerWidth <= 1200) {
-      setGridWidth("50%"); // 2 cards per row for medium screens
+      setGridWidth("50%");
     } else {
-      setGridWidth("33.33%"); // 3 cards per row for large screens
+      setGridWidth("33.33%");
     }
   };
 
-  // Listen for window resize events
   useEffect(() => {
-    updateGridWidth(); // Initial check when component mounts
-    window.addEventListener("resize", updateGridWidth); // Update on resize
-    return () => window.removeEventListener("resize", updateGridWidth); // Cleanup listener
+    updateGridWidth();
+    window.addEventListener("resize", updateGridWidth);
+    return () => window.removeEventListener("resize", updateGridWidth);
   }, []);
 
   return (
     <>
-      <Card style={{ maxWidth: "1500px", margin: "0 auto" }}>
+      <StyledCard>
         {services.map((service) => (
           <Card.Grid
+            style={{ width: gridWidth }}
             key={service.key}
-            hoverable
             onClick={() => showModal(service)}
-            style={{ width: gridWidth, padding: "10px", textAlign: "center" }}
           >
-            <Flex align="center" justify="center" vertical>
+            <Flex align="center" vertical>
               <DotLottieIcon animationSrc={service.animationSrc} />
               <h2>{service.title}</h2>
               <p style={{ color: "#1290cb" }}>Още подробности</p>
             </Flex>
           </Card.Grid>
         ))}
-      </Card>
+      </StyledCard>
       {selectedService && (
         <Modal
           title={selectedService.title}
@@ -150,8 +153,7 @@ const CleaningServicesCards = () => {
           onCancel={handleCancel}
           footer={null}
         >
-          <Flex align="center" justify="center" vertical>
-            {/* Use the selected service's unique iconSrc in the modal */}
+          <Flex align="center" vertical>
             <DotLottieIcon animationSrc={selectedService.animationSrc} />
             <p>{selectedService.description}</p>
           </Flex>

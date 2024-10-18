@@ -3,7 +3,38 @@ import { MenuOutlined } from "@ant-design/icons";
 import logo from "../assets/tornado_logo.png"; // optional for custom styling
 import logoText from "../assets/tornado_logo_text.png"; // optional for custom styling
 import { useState } from "react";
-import "../styles/AppHeader.css";
+import styled from "styled-components";
+
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  width: fit-content;
+`;
+
+const MenuDesktopContainer = styled.div`
+  display: block;
+  width: 100%;
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const MenuMobileContainer = styled.div`
+  display: none;
+  width: 100%;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+`;
+
+const MenuDesktop = styled(Menu)`
+  width: 100%;
+  display: flex;
+  justify-content: right;
+`;
+
 const AppHeader = () => {
   const [visible, setVisible] = useState(false);
 
@@ -14,15 +45,15 @@ const AppHeader = () => {
   const onClose = () => {
     setVisible(false);
   };
+
   return (
     <>
-      <div className="logo">
+      <Logo>
         <img src={logo} alt="logo" height={50} />
         <img src={logoText} alt="logo" height={30} />
-      </div>
-      <div className="menu-desktop-container">
-        <Menu
-          className="menu-desktop"
+      </Logo>
+      <MenuDesktopContainer>
+        <MenuDesktop
           theme="light"
           mode="horizontal"
           defaultSelectedKeys={["1"]}
@@ -32,9 +63,9 @@ const AppHeader = () => {
           <Menu.Item key="3">Цени</Menu.Item>
           <Menu.Item key="4">За нас</Menu.Item>
           <Menu.Item key="5">Контакти</Menu.Item>
-        </Menu>
-      </div>
-      <div className="menu-mobile-container">
+        </MenuDesktop>
+      </MenuDesktopContainer>
+      <MenuMobileContainer>
         <Button
           variant="outlined"
           size="large"
@@ -42,11 +73,7 @@ const AppHeader = () => {
           onClick={showDrawer}
         ></Button>
         <Drawer title="Menu" placement="right" onClose={onClose} open={visible}>
-          <Menu
-            className="menu-mobile"
-            mode="vertical"
-            defaultSelectedKeys={["1"]}
-          >
+          <Menu mode="vertical" defaultSelectedKeys={["1"]}>
             <Menu.Item key="1">Начало</Menu.Item>
             <Menu.Item key="2">Услуги</Menu.Item>
             <Menu.Item key="3">Цени</Menu.Item>
@@ -54,7 +81,7 @@ const AppHeader = () => {
             <Menu.Item key="5">Контакти</Menu.Item>
           </Menu>
         </Drawer>
-      </div>
+      </MenuMobileContainer>
     </>
   );
 };

@@ -59,7 +59,6 @@ const App = () => {
           <Divider style={{ margin: "50px 0" }}>
             <h1>Защо нас?</h1>
           </Divider>
-          {/* <WhyChooseServices /> */}
           <AboutUs />
           <Divider style={{ margin: "50px 0" }}>
             <h1>Контакти</h1>

@@ -1,6 +1,6 @@
 import { Button, DatePicker, Form, Select, Space } from "antd";
-// import { options } from "less";
 import { useState } from "react";
+import styled from "styled-components";
 
 // const services = [
 //   { label: "Основно почистване", value: "deep_cleaning" },
@@ -91,6 +91,22 @@ const countries = [
     ],
   },
 ];
+
+// Styled components
+const FormContainer = styled(Form)`
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledSelect = styled(Select)`
+  width: 100%;
+`;
+
+const SubmitButton = styled(Button)`
+  margin-top: 16px; /* Optional: Add margin for better spacing */
+`;
+
 const OrderService = () => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0].value);
 
@@ -98,16 +114,9 @@ const OrderService = () => {
     setSelectedCountry(value);
     console.log(value);
   };
+
   return (
-    <Form
-      layout="vertical"
-      size="large"
-      style={{
-        width: 280,
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <FormContainer layout="vertical" size="large">
       <Form.Item label="Локация">
         <Space.Compact>
           <Form.Item
@@ -116,23 +125,21 @@ const OrderService = () => {
             rules={[
               {
                 required: true,
-                message: "Province is required",
+                message: "Градът е задължителен",
               },
             ]}
           >
-            <Select
+            <StyledSelect
               placeholder="Избери град"
               onChange={handleCountryChange}
               defaultValue={countries[0].value}
             >
-              {countries.map((country) => {
-                return (
-                  <Select.Option key={country.value} value={country.value}>
-                    {country.title}
-                  </Select.Option>
-                );
-              })}
-            </Select>
+              {countries.map((country) => (
+                <Select.Option key={country.value} value={country.value}>
+                  {country.title}
+                </Select.Option>
+              ))}
+            </StyledSelect>
           </Form.Item>
           <Form.Item
             name={["address", "area"]}
@@ -140,22 +147,20 @@ const OrderService = () => {
             rules={[
               {
                 required: true,
-                message: "Street is required",
+                message: "Кварталът е задължителен",
               },
             ]}
           >
-            <Select placeholder="Квартал" style={{ width: "100%" }}>
+            <StyledSelect placeholder="Квартал">
               {selectedCountry &&
                 countries
                   .find((country) => country.value === selectedCountry)
-                  .children.map((area) => {
-                    return (
-                      <Select.Option key={area.value} value={area.value}>
-                        {area.title}
-                      </Select.Option>
-                    );
-                  })}
-            </Select>
+                  .children.map((area) => (
+                    <Select.Option key={area.value} value={area.value}>
+                      {area.title}
+                    </Select.Option>
+                  ))}
+            </StyledSelect>
           </Form.Item>
         </Space.Compact>
       </Form.Item>
@@ -163,13 +168,13 @@ const OrderService = () => {
         <DatePicker />
       </Form.Item>
       <Form.Item label="Услуга">
-        <Select style={{}} options={servicesTest} />
+        <StyledSelect style={{}} options={servicesTest} />
       </Form.Item>
       <Form.Item>
-        <Button type="primary">Запиши</Button>
+        <SubmitButton type="primary">Запиши</SubmitButton>
       </Form.Item>
-    </Form>
-    // </Card>
+    </FormContainer>
   );
 };
+
 export default OrderService;

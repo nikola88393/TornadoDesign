@@ -14,6 +14,7 @@
     "less": "^4.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "styled-components": "^6.1.13",
     "vite-plugin-imp": "^2.4.0"
   },
   "devDependencies": {

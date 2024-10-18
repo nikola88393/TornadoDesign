@@ -1,5 +1,6 @@
 import { List, Row, Col } from "antd";
 import { FacebookOutlined } from "@ant-design/icons";
+import styled from "styled-components";
 
 const contacts = [
   {
@@ -31,11 +32,16 @@ const socialMedia = [
   },
 ];
 
+const FooterText = styled.p`
+  text-align: center;
+  margin-top: 20px;
+`;
+
 const AppFooter = () => {
   return (
     <>
-      <Row gutter={32} style={{ maxWidth: "1500px", margin: "0 auto" }}>
-        <Col xs={24} sm={12} xl={8}>
+      <Row gutter={[32, 32]} style={{ maxWidth: "1500px", margin: "0 auto" }}>
+        <Col xs={24} sm={10} xl={6}>
           <h2>Контакти</h2>
           <List
             dataSource={contacts}
@@ -70,9 +76,7 @@ const AppFooter = () => {
           />
         </Col>
       </Row>
-      <p style={{ textAlign: "center", marginTop: "20px" }}>
-        Copyright © 2024 Tornado Services
-      </p>
+      <FooterText>Copyright © 2024 Tornado Services</FooterText>
     </>
   );
 };
