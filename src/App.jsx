@@ -7,6 +7,7 @@ import AboutUs from "./components/AboutUs";
 import "./styles/main.css";
 import AppFooter from "./components/AppFooter";
 import ContactUs from "./components/ContactUs";
+import Faq from "./components/Faq";
 
 const { Header, Footer, Content } = Layout;
 
@@ -17,6 +18,11 @@ const App = () => {
         token: {
           fontFamily: "Montserrat, sans-serif",
           colorPrimary: "#1290cb",
+          // experiment wqith overriding other tokens
+          fontSize: 16, // Change base font size
+          lineHeight: 1.5, // Adjust line height
+          padding: 12, // Adjust padding if necessary
+          margin: 16, // Adjust margin if necessary
           Layout: {
             headerBg: "#ffffff",
             headerColor: "#ffffff",
@@ -64,6 +70,10 @@ const App = () => {
             <h1>Контакти</h1>
           </Divider>
           <ContactUs />
+          <Divider style={{ margin: "50px 0" }}>
+            <h1>ЧЗВ</h1>
+          </Divider>
+          <Faq />
         </Content>
         <Footer
           style={{
