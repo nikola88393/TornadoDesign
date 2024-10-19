@@ -37,14 +37,11 @@ const ReasonToChooseNumber = styled.p`
   border-radius: 50%;
   background-color: rgba(18, 144, 203, 0.1);
   color: #1290cb;
-  font-size: 17px;
   padding: 5px;
   width: 30px;
   font-weight: 600;
 `;
-const ReasonToChooseText = styled.p`
-  font-size: 17px;
-`;
+
 const FlexContainer = styled(Flex)`
   margin-bottom: 30px;
 `;
@@ -61,9 +58,7 @@ const WhyChooseServices = () => {
               <ReasonToChooseNumber className="reason-to-choose-number">
                 {reason.number}
               </ReasonToChooseNumber>
-              <ReasonToChooseText className="reason-to-choose-text">
-                {reason.text}
-              </ReasonToChooseText>
+              <p className="reason-to-choose-text">{reason.text}</p>
             </Flex>
           </Col>
         ))}

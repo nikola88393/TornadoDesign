@@ -1,6 +1,7 @@
 import { Button, DatePicker, Form, Select, Space } from "antd";
 import { useState } from "react";
 import styled from "styled-components";
+import livingRoomHero from "../assets/living-room-hero.jpg";
 
 // const services = [
 //   { label: "Основно почистване", value: "deep_cleaning" },
@@ -107,6 +108,16 @@ const SubmitButton = styled(Button)`
   margin-top: 16px; /* Optional: Add margin for better spacing */
 `;
 
+const HeroContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(${livingRoomHero});
+  background-size: cover;
+  background-position: center;
+`;
 const OrderService = () => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0].value);
 
@@ -116,64 +127,66 @@ const OrderService = () => {
   };
 
   return (
-    <FormContainer layout="vertical" size="large">
-      <Form.Item label="Локация">
-        <Space.Compact>
-          <Form.Item
-            name={["address", "city"]}
-            noStyle
-            rules={[
-              {
-                required: true,
-                message: "Градът е задължителен",
-              },
-            ]}
-          >
-            <StyledSelect
-              placeholder="Избери град"
-              onChange={handleCountryChange}
-              defaultValue={countries[0].value}
+    <HeroContainer>
+      <FormContainer layout="vertical" size="large">
+        <Form.Item label="Локация">
+          <Space.Compact>
+            <Form.Item
+              name={["address", "city"]}
+              noStyle
+              rules={[
+                {
+                  required: true,
+                  message: "Градът е задължителен",
+                },
+              ]}
             >
-              {countries.map((country) => (
-                <Select.Option key={country.value} value={country.value}>
-                  {country.title}
-                </Select.Option>
-              ))}
-            </StyledSelect>
-          </Form.Item>
-          <Form.Item
-            name={["address", "area"]}
-            noStyle
-            rules={[
-              {
-                required: true,
-                message: "Кварталът е задължителен",
-              },
-            ]}
-          >
-            <StyledSelect placeholder="Квартал">
-              {selectedCountry &&
-                countries
-                  .find((country) => country.value === selectedCountry)
-                  .children.map((area) => (
-                    <Select.Option key={area.value} value={area.value}>
-                      {area.title}
-                    </Select.Option>
-                  ))}
-            </StyledSelect>
-          </Form.Item>
-        </Space.Compact>
-      </Form.Item>
-      <Form.Item label="Дата">
-        <DatePicker />
-      </Form.Item>
-      <Form.Item label="Услуга">
-        <StyledSelect style={{}} options={servicesTest} />
-      </Form.Item>
-      <Form.Item>
-        <SubmitButton type="primary">Запиши</SubmitButton>
-      </Form.Item>
-    </FormContainer>
+              <StyledSelect
+                placeholder="Избери град"
+                onChange={handleCountryChange}
+                defaultValue={countries[0].value}
+              >
+                {countries.map((country) => (
+                  <Select.Option key={country.value} value={country.value}>
+                    {country.title}
+                  </Select.Option>
+                ))}
+              </StyledSelect>
+            </Form.Item>
+            <Form.Item
+              name={["address", "area"]}
+              noStyle
+              rules={[
+                {
+                  required: true,
+                  message: "Кварталът е задължителен",
+                },
+              ]}
+            >
+              <StyledSelect placeholder="Квартал">
+                {selectedCountry &&
+                  countries
+                    .find((country) => country.value === selectedCountry)
+                    .children.map((area) => (
+                      <Select.Option key={area.value} value={area.value}>
+                        {area.title}
+                      </Select.Option>
+                    ))}
+              </StyledSelect>
+            </Form.Item>
+          </Space.Compact>
+        </Form.Item>
+        <Form.Item label="Дата">
+          <DatePicker />
+        </Form.Item>
+        <Form.Item label="Услуга">
+          <StyledSelect style={{}} options={servicesTest} />
+        </Form.Item>
+        <Form.Item>
+          <SubmitButton type="primary">Запиши</SubmitButton>
+        </Form.Item>
+      </FormContainer>
+    </HeroContainer>
   );
 };
 

@@ -81,13 +81,13 @@ const Faq = () => {
       <Col xs={24} sm={24} md={10} lg={10}>
         <Flex gap={15} vertical>
           <h1>Често задавани въпроси</h1>
-          <p style={{ fontSize: "17px" }}>
+          <p>
             Нашата секция с често задавани въпроси е създадена, за да ви спести
             време и да ви помогне да получите бързо отговор на най-често
             задаваните въпроси. Разгледайте по-долу за повече информация относно
             нашите услуги, процеса на работа и условията за резервации.
           </p>
-          <p style={{ fontSize: "17px" }}>
+          <p>
             Не успяхте да намерите отговора, който търсите? Свържете се с нашия
             екип, за да получите по-подробна информация или да обсъдите вашите
             специфични нужди.
@@ -95,12 +95,7 @@ const Faq = () => {
         </Flex>
       </Col>
       <Col xs={24} sm={24} md={12} lg={12}>
-        <Collapse
-          expandIconPosition="end"
-          ghost
-          accordion
-          style={{ fontSize: "17px" }}
-        >
+        <Collapse expandIconPosition="end" ghost accordion>
           {items.map((item) => (
             <Collapse.Panel header={item.label} key={item.key}>
               {item.items}

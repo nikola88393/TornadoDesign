@@ -8,8 +8,16 @@ import "./styles/main.css";
 import AppFooter from "./components/AppFooter";
 import ContactUs from "./components/ContactUs";
 import Faq from "./components/Faq";
+import styled from "styled-components";
 
 const { Header, Footer, Content } = Layout;
+
+const StickyHeader = styled(Header)`
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Keeps it above other content */
+  width: 100%;
+`;
 
 const App = () => {
   return (
@@ -21,23 +29,23 @@ const App = () => {
           // experiment wqith overriding other tokens
           fontSize: 16, // Change base font size
           lineHeight: 1.5, // Adjust line height
-          padding: 12, // Adjust padding if necessary
-          margin: 16, // Adjust margin if necessary
           Layout: {
             headerBg: "#ffffff",
             headerColor: "#ffffff",
+          },
+          Divider: {
+            margin: "50px",
           },
           // Seed Token
         },
       }}
     >
       <Layout>
-        <Header style={{ display: "flex" }}>
+        <StickyHeader style={{ display: "flex" }}>
           <AppHeader />
-        </Header>
+        </StickyHeader>
         <Content
           style={{
-            padding: "0 50px",
             // background: "#fff",
             display: "flex",
             flexDirection: "column",
@@ -58,19 +66,19 @@ const App = () => {
           >
             <OrderService />
           </div>
-          <Divider className="text-raleway" style={{ margin: "50px 0" }}>
+          <Divider>
             <h1>Нашите услуги</h1>
           </Divider>
           <CleaningServicesMenu />
-          <Divider style={{ margin: "50px 0" }}>
+          <Divider>
             <h1>Защо нас?</h1>
           </Divider>
           <AboutUs />
-          <Divider style={{ margin: "50px 0" }}>
+          <Divider>
             <h1>Контакти</h1>
           </Divider>
           <ContactUs />
-          <Divider style={{ margin: "50px 0" }}>
+          <Divider>
             <h1>ЧЗВ</h1>
           </Divider>
           <Faq />
