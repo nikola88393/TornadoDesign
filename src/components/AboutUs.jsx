@@ -1,27 +1,26 @@
 import { Row, Col } from "antd";
 import styled from "styled-components";
 import logo_big from "../assets/tornado_logo_big.png";
-import CustomerReviews from "./CustomerReviews";
+// import CustomerReviews from "./CustomerReviews";
 import WhyChooseServices from "./WhyChooseServices";
 
 const StyledRow = styled(Row)`
   padding: 20px;
-  max-width: 1500px;
+  max-width: 1300px;
   margin-top: 50px;
 `;
 
 const StyledImage = styled.img`
   width: 100%;
   max-width: 450px;
-  margin: 0 auto;
-  text-align: center;
+  marin: 0 auto;
 `;
 
 const AboutUs = () => {
   return (
     <>
       <WhyChooseServices />
-      <StyledRow gutter={[16, 32]} align="middle" justify="center" wrap>
+      <StyledRow gutter={[16, 32]} justify="space-between" wrap>
         <Col xs={24} sm={24} md={12} lg={10}>
           <div>
             <h2>Кои сме ние?</h2>
@@ -42,7 +41,7 @@ const AboutUs = () => {
           <StyledImage src={logo_big} alt="logo" />
         </Col>
       </StyledRow>
-      <CustomerReviews />
+      {/* <CustomerReviews /> */}
     </>
   );
 };

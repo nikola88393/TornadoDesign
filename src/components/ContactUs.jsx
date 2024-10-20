@@ -59,7 +59,7 @@ const ContactUs = () => {
   );
 
   return (
-    <Row gutter={[64, 64]} style={{ maxWidth: "1500px" }}>
+    <Row gutter={[64, 64]} style={{ maxWidth: "1300px" }}>
       <Col xs={24} sm={12} xl={12}>
         <SectionHeading>Отдел</SectionHeading>
         {renderServicesList(servicesList1)}

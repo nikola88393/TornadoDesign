@@ -93,7 +93,7 @@ const services = [
 ];
 
 const StyledCard = styled(Card)`
-  max-width: 1500px;
+  max-width: 1300px;
   margin: 0 auto;
 `;
 

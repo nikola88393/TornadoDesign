@@ -30,7 +30,7 @@ const reasonsToChooseUs = [
 ];
 
 const ReasonToChooseContainer = styled(Row)`
-  max-width: 1200px;
+  max-width: 1300px;
   display: flex;
 `;
 const ReasonToChooseNumber = styled.p`

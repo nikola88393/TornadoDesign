@@ -1,6 +1,6 @@
 import { Layout, ConfigProvider, Divider } from "antd";
 import AppHeader from "./components/AppHeader";
-import OrderService from "./components/OrderService";
+// import OrderService from "./components/OrderService";
 import CleaningServicesMenu from "./components/CleaningServicesMenu";
 // import CleaningServicesTable from "./components/CleaningServicesTable";
 import AboutUs from "./components/AboutUs";
@@ -52,7 +52,9 @@ const App = () => {
             alignItems: "center",
             justifyContent: "space-around",
             flexWrap: "wrap",
-            paddingBlock: "50px",
+            // paddingBlock: "50px",
+            // paddingInline: "50px",
+            padding: "50px",
           }}
         >
           <div
@@ -64,7 +66,7 @@ const App = () => {
               width: "100%",
             }}
           >
-            <OrderService />
+            {/* <OrderService /> */}
           </div>
           <Divider>
             <h1>Нашите услуги</h1>
