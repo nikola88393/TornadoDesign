@@ -39,22 +39,22 @@ const MenuMobileContainer = styled.div`
 const anchorLinks = [
   {
     key: 1,
-    title: "Начало",
+    title: "НАЧАЛО",
     href: "#hero",
   },
   {
     key: 2,
-    title: "Услуги",
+    title: "УСЛУГИ",
     href: "#services",
   },
   {
     key: 3,
-    title: "За нас",
+    title: "ЗА НАС",
     href: "#aboutUs",
   },
   {
     key: 4,
-    title: "Контакти",
+    title: "КОНТАКТИ",
     href: "#contacts",
   },
   {
