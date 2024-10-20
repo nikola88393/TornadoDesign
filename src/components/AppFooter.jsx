@@ -1,5 +1,5 @@
-import { List, Row, Col } from "antd";
-import { FacebookOutlined } from "@ant-design/icons";
+import { List, Row, Col, FloatButton } from "antd";
+import { FacebookOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 
 const contacts = [
@@ -37,11 +37,18 @@ const FooterText = styled.p`
   margin-top: 20px;
 `;
 
+const StyledCol = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+`;
+
 const AppFooter = () => {
   return (
     <>
-      <Row gutter={[32, 32]} style={{ maxWidth: "1500px", margin: "0 auto" }}>
-        <Col xs={24} sm={10} xl={6}>
+      <Row gutter={[32, 32]} align="center">
+        <StyledCol xs={24} sm={10} xl={6}>
           <h2>Контакти</h2>
           <List
             dataSource={contacts}
@@ -51,8 +58,8 @@ const AppFooter = () => {
               </List.Item>
             )}
           />
-        </Col>
-        <Col xs={24} sm={12} xl={8}>
+        </StyledCol>
+        <StyledCol xs={24} sm={12} xl={6}>
           <h2>Работно време</h2>
           <List
             dataSource={workingHours}
@@ -62,8 +69,8 @@ const AppFooter = () => {
               </List.Item>
             )}
           />
-        </Col>
-        <Col xs={24} sm={12} xl={8}>
+        </StyledCol>
+        <StyledCol xs={24} sm={12} xl={6}>
           <h2>Социални мрежи</h2>
           <List
             dataSource={socialMedia}
@@ -74,9 +81,10 @@ const AppFooter = () => {
               </List.Item>
             )}
           />
-        </Col>
+        </StyledCol>
       </Row>
       <FooterText>Copyright © 2024 Tornado Services</FooterText>
+      <FloatButton.BackTop duration={700} icon={<ArrowUpOutlined />} />
     </>
   );
 };
