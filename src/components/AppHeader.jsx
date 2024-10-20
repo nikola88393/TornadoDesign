@@ -11,6 +11,7 @@ const HeaderContainer = styled.div`
   width: 100%;
   align-items: center;
 `;
+
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -35,12 +36,6 @@ const MenuMobileContainer = styled.div`
   }
 `;
 
-// const MenuDesktop = styled(Menu)`
-//   width: 100%;
-//   display: flex;
-//   justify-content: right;
-// `;
-
 const { Link } = Anchor;
 
 const AppHeader = () => {
@@ -62,7 +57,7 @@ const AppHeader = () => {
       </Logo>
       <MenuDesktopContainer>
         <Anchor
-          targetOffset={200}
+          targetOffset={250}
           direction="horizontal"
           style={{ height: "100%" }}
         >

@@ -13,10 +13,15 @@ import styled from "styled-components";
 const { Header, Footer, Content } = Layout;
 
 const StickyHeader = styled(Header)`
+  display: flex;
   position: fixed;
   top: 0;
   z-index: 1000; /* Keeps it above other content */
   width: 100%;
+  padding: 50px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const App = () => {
@@ -41,19 +46,16 @@ const App = () => {
       }}
     >
       <Layout>
-        <StickyHeader style={{ display: "flex" }}>
+        <StickyHeader>
           <AppHeader />
         </StickyHeader>
         <Content
           style={{
-            // background: "#fff",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-around",
             flexWrap: "wrap",
-            // paddingBlock: "50px",
-            // paddingInline: "50px",
             padding: "50px",
           }}
         >
