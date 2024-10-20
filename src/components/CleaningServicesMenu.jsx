@@ -130,7 +130,7 @@ const CleaningServicesCards = () => {
   }, []);
 
   return (
-    <>
+    <div id="services">
       <StyledCard>
         {services.map((service) => (
           <Card.Grid
@@ -159,7 +159,7 @@ const CleaningServicesCards = () => {
           </Flex>
         </Modal>
       )}
-    </>
+    </div>
   );
 };
 

@@ -1,10 +1,16 @@
-import { Menu, Button, Drawer } from "antd";
+import { Button, Drawer, Anchor } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import logo from "../assets/tornado_logo.png"; // optional for custom styling
 import logoText from "../assets/tornado_logo_text.png"; // optional for custom styling
 import { useState } from "react";
 import styled from "styled-components";
 
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+`;
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -12,8 +18,8 @@ const Logo = styled.div`
 `;
 
 const MenuDesktopContainer = styled.div`
-  display: block;
-  width: 100%;
+  display: flex;
+  // width: 100%;
   @media (max-width: 768px) {
     display: none;
   }
@@ -29,11 +35,13 @@ const MenuMobileContainer = styled.div`
   }
 `;
 
-const MenuDesktop = styled(Menu)`
-  width: 100%;
-  display: flex;
-  justify-content: right;
-`;
+// const MenuDesktop = styled(Menu)`
+//   width: 100%;
+//   display: flex;
+//   justify-content: right;
+// `;
+
+const { Link } = Anchor;
 
 const AppHeader = () => {
   const [visible, setVisible] = useState(false);
@@ -47,42 +55,42 @@ const AppHeader = () => {
   };
 
   return (
-    <>
+    <HeaderContainer>
       <Logo>
         <img src={logo} alt="logo" height={50} />
         <img src={logoText} alt="logo" height={30} />
       </Logo>
       <MenuDesktopContainer>
-        <MenuDesktop
-          theme="light"
-          mode="horizontal"
-          defaultSelectedKeys={["1"]}
+        <Anchor
+          targetOffset={200}
+          direction="horizontal"
+          style={{ height: "100%" }}
         >
-          <Menu.Item key="1">Начало</Menu.Item>
-          <Menu.Item key="2">Услуги</Menu.Item>
-          <Menu.Item key="3">Цени</Menu.Item>
-          <Menu.Item key="4">За нас</Menu.Item>
-          <Menu.Item key="5">Контакти</Menu.Item>
-        </MenuDesktop>
+          <Link href="#hero" title="Начало" />
+          <Link href="#services" title="Услуги" />
+          <Link href="#aboutUs" title="За нас" />
+          <Link href="#contacts" title="Контакти" />
+          <Link href="#faq" title="ЧЗВ" />
+        </Anchor>
       </MenuDesktopContainer>
       <MenuMobileContainer>
         <Button
-          variant="outlined"
+          variant="link"
           size="large"
           icon={<MenuOutlined />}
           onClick={showDrawer}
         ></Button>
-        <Drawer title="Menu" placement="right" onClose={onClose} open={visible}>
-          <Menu mode="vertical" defaultSelectedKeys={["1"]}>
-            <Menu.Item key="1">Начало</Menu.Item>
-            <Menu.Item key="2">Услуги</Menu.Item>
-            <Menu.Item key="3">Цени</Menu.Item>
-            <Menu.Item key="4">За нас</Menu.Item>
-            <Menu.Item key="5">Контакти</Menu.Item>
-          </Menu>
+        <Drawer placement="right" onClose={onClose} open={visible}>
+          <Anchor targetOffset={200} onClick={onClose}>
+            <Link href="#hero" title="Начало" />
+            <Link href="#services" title="Услуги" />
+            <Link href="#aboutUs" title="За нас" />
+            <Link href="#contacts" title="Контакти" />
+            <Link href="#faq" title="ЧЗВ" />
+          </Anchor>
         </Drawer>
       </MenuMobileContainer>
-    </>
+    </HeaderContainer>
   );
 };
 

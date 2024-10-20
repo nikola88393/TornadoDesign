@@ -18,7 +18,7 @@ const StyledImage = styled.img`
 
 const AboutUs = () => {
   return (
-    <>
+    <div id="aboutUs">
       <WhyChooseServices />
       <StyledRow gutter={[16, 32]} justify="space-between" wrap>
         <Col xs={24} sm={24} md={12} lg={10}>
@@ -42,7 +42,7 @@ const AboutUs = () => {
         </Col>
       </StyledRow>
       {/* <CustomerReviews /> */}
-    </>
+    </div>
   );
 };
 
