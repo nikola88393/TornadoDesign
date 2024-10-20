@@ -42,9 +42,6 @@ const App = () => {
             footerBg: "#ffffff",
             bodyBg: "#ffffff",
           },
-          Divider: {
-            margin: "50px",
-          },
           // Seed Token
         },
       }}
@@ -71,13 +68,7 @@ const App = () => {
           <ContactUs />
           <Faq />
         </Content>
-        <Footer
-          style={{
-            borderTop: "1px solid rgba(5, 5, 5, 0.06)",
-            // backgroundColor: "#1290cb",
-            // color: "white",
-          }}
-        >
+        <Footer style={{ width: "100%", padding: "0", overflow: "hidden" }}>
           <AppFooter />
         </Footer>
       </Layout>
