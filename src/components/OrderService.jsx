@@ -38,7 +38,7 @@ const countries = [
   {
     title: "Sofia",
     value: "sofia",
-    children: [
+    items: [
       { title: "Lozenets", value: "lozenets" },
       { title: "Mladost", value: "mladost" },
       { title: "Vitosha", value: "vitosha" },
@@ -50,7 +50,7 @@ const countries = [
   {
     title: "Plovdiv",
     value: "plovdiv",
-    children: [
+    items: [
       { title: "Kapana", value: "kapana" },
       { title: "Trakia", value: "trakia" },
       { title: "Smirnenski", value: "smirnenski" },
@@ -62,7 +62,7 @@ const countries = [
   {
     title: "Varna",
     value: "varna",
-    children: [
+    items: [
       { title: "Asparuhovo", value: "asparuhovo" },
       { title: "Levski", value: "levski" },
       { title: "Briz", value: "briz" },
@@ -151,7 +151,16 @@ const OrderService = () => {
               включително и за уикенди!
             </p>
           </HeroText>
-          <FormContainer layout="vertical" size="large">
+          <FormContainer
+            layout="vertical"
+            size="large"
+            initialValues={{
+              address: {
+                city: countries[0].value,
+                area: countries[0].items[0].value,
+              },
+            }}
+          >
             <Form.Item label="1. Локация">
               <Space.Compact>
                 <Form.Item
@@ -168,7 +177,6 @@ const OrderService = () => {
                   <StyledSelect
                     placeholder="Избери град"
                     onChange={handleCountryChange}
-                    defaultValue={countries[0].value}
                   >
                     {countries.map((country) => (
                       <Select.Option key={country.value} value={country.value}>
@@ -191,7 +199,7 @@ const OrderService = () => {
                     {selectedCountry &&
                       countries
                         .find((country) => country.value === selectedCountry)
-                        .children.map((area) => (
+                        .items.map((area) => (
                           <Select.Option key={area.value} value={area.value}>
                             {area.title}
                           </Select.Option>

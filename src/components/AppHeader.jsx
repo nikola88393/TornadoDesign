@@ -36,7 +36,33 @@ const MenuMobileContainer = styled.div`
   }
 `;
 
-const { Link } = Anchor;
+const anchorLinks = [
+  {
+    key: 1,
+    title: "Начало",
+    href: "#hero",
+  },
+  {
+    key: 2,
+    title: "Услуги",
+    href: "#services",
+  },
+  {
+    key: 3,
+    title: "За нас",
+    href: "#aboutUs",
+  },
+  {
+    key: 4,
+    title: "Контакти",
+    href: "#contacts",
+  },
+  {
+    key: 5,
+    title: "ЧЗВ",
+    href: "#faq",
+  },
+];
 
 const AppHeader = () => {
   const [visible, setVisible] = useState(false);
@@ -57,16 +83,11 @@ const AppHeader = () => {
       </Logo>
       <MenuDesktopContainer>
         <Anchor
-          targetOffset={100}
+          targetOffset={80}
           direction="horizontal"
           style={{ height: "100%" }}
-        >
-          <Link href="#hero" title="Начало" />
-          <Link href="#services" title="Услуги" />
-          <Link href="#aboutUs" title="За нас" />
-          <Link href="#contacts" title="Контакти" />
-          <Link href="#faq" title="ЧЗВ" />
-        </Anchor>
+          items={anchorLinks}
+        />
       </MenuDesktopContainer>
       <MenuMobileContainer>
         <Button
@@ -76,13 +97,7 @@ const AppHeader = () => {
           onClick={showDrawer}
         ></Button>
         <Drawer placement="right" onClose={onClose} open={visible}>
-          <Anchor targetOffset={200} onClick={onClose}>
-            <Link href="#hero" title="Начало" />
-            <Link href="#services" title="Услуги" />
-            <Link href="#aboutUs" title="За нас" />
-            <Link href="#contacts" title="Контакти" />
-            <Link href="#faq" title="ЧЗВ" />
-          </Anchor>
+          <Anchor targetOffset={80} onClick={onClose} items={anchorLinks} />
         </Drawer>
       </MenuMobileContainer>
     </HeaderContainer>
