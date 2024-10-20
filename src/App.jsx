@@ -34,7 +34,7 @@ const App = () => {
           fontFamily: "Raleway, sans-serif",
           colorPrimary: "#1290cb",
           // experiment wqith overriding other tokens
-          fontSize: 16, // Change base font size
+          fontSize: 18, // Change base font size
           lineHeight: 1.5, // Adjust line height
           Layout: {
             headerBg: "#ffffff",

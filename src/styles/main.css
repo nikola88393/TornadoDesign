@@ -8,7 +8,8 @@ h5,
 h6,
 .ant-typography-title,
 .ant-card-head-title,
-.ant-modal-title {
+.ant-modal-title,
+.ant-anchor {
   font-family: "Montserrat", sans-serif !important; /* For headings */
 }
 
@@ -29,4 +30,10 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #1290cb;
   border-radius: 6px;
+}
+
+/* Remove anchor underline on vertical header */
+.ant-anchor-wrapper-horizontal::before {
+  display: none;
+  border: none;
 }

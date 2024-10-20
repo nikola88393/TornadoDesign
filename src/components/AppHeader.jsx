@@ -36,6 +36,11 @@ const MenuMobileContainer = styled.div`
   }
 `;
 
+const StyledAnchor = styled(Anchor)`
+  .ant-anchor-link-title {
+    font-weight: 700;
+  }
+`;
 const anchorLinks = [
   {
     key: 1,
@@ -82,7 +87,7 @@ const AppHeader = () => {
         <img src={logoText} alt="logo" height={30} />
       </Logo>
       <MenuDesktopContainer>
-        <Anchor
+        <StyledAnchor
           targetOffset={80}
           direction="horizontal"
           style={{ height: "100%" }}
@@ -97,7 +102,11 @@ const AppHeader = () => {
           onClick={showDrawer}
         ></Button>
         <Drawer placement="right" onClose={onClose} open={visible}>
-          <Anchor targetOffset={80} onClick={onClose} items={anchorLinks} />
+          <StyledAnchor
+            targetOffset={80}
+            onClick={onClose}
+            items={anchorLinks}
+          />
         </Drawer>
       </MenuMobileContainer>
     </HeaderContainer>

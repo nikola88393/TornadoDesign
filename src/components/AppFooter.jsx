@@ -55,16 +55,18 @@ const FooterContainer = styled.div`
 const AppFooter = () => {
   return (
     <>
-      <svg
-        viewBox="0 0 1920 80"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ display: "block" }}
-      >
-        <path
-          d="M0 20C0 20 169.5 0 510 0C850.5 0 1069.5 60 1410 60C1750.5 60 1920 20 1920 20V80H0V20Z"
-          fill="#1290cb"
-        ></path>
-      </svg>
+      <div style={{ overflow: "hidden", lineHeight: "0" }}>
+        <svg
+          viewBox="0 0 1920 80"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ display: "block", minHeight: "90px" }}
+        >
+          <path
+            d="M0 20C0 20 169.5 0 510 0C850.5 0 1069.5 60 1410 60C1750.5 60 1920 20 1920 20V80H0V20Z"
+            fill="#1290cb"
+          ></path>
+        </svg>
+      </div>
       <FooterContainer>
         <Row gutter={[32, 32]} align="center">
           <StyledCol xs={24} sm={10} xl={6}>
