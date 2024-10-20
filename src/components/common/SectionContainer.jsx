@@ -15,7 +15,7 @@ const Container = styled.div`
 const SectionContainer = ({ viewHeight, title, children, id }) => {
   return (
     <Container id={id} style={{ minHeight: `${viewHeight}vh` }}>
-      {title && <h1>{title}</h1>}
+      {title && <h1 style={{ fontWeight: 600 }}>{title.toUpperCase()}</h1>}
       {children}
     </Container>
   );
