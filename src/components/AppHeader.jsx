@@ -57,7 +57,7 @@ const AppHeader = () => {
       </Logo>
       <MenuDesktopContainer>
         <Anchor
-          targetOffset={250}
+          targetOffset={100}
           direction="horizontal"
           style={{ height: "100%" }}
         >

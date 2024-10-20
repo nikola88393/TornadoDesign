@@ -1,7 +1,7 @@
 import { Row, Col, Flex } from "antd";
 import arrow from "../assets/arrow-in-the-target.svg";
 import styled from "styled-components";
-
+import SectionContainer from "./common/SectionContainer";
 const reasonsToChooseUs = [
   {
     number: "01",
@@ -47,7 +47,7 @@ const FlexContainer = styled(Flex)`
 `;
 const WhyChooseServices = () => {
   return (
-    <>
+    <SectionContainer title="Защо нас?" viewHeight={50} id="aboutUs">
       <FlexContainer align="center" vertical>
         <img src={arrow} alt="arrow in target icon" />
       </FlexContainer>
@@ -63,7 +63,7 @@ const WhyChooseServices = () => {
           </Col>
         ))}
       </ReasonToChooseContainer>
-    </>
+    </SectionContainer>
   );
 };
 

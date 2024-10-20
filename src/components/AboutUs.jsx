@@ -2,12 +2,11 @@ import { Row, Col } from "antd";
 import styled from "styled-components";
 import logo_big from "../assets/tornado_logo_big.png";
 // import CustomerReviews from "./CustomerReviews";
-import WhyChooseServices from "./WhyChooseServices";
+import SectionContainer from "./common/SectionContainer";
 
 const StyledRow = styled(Row)`
   padding: 20px;
   max-width: 1300px;
-  margin-top: 50px;
 `;
 
 const StyledImage = styled.img`
@@ -18,12 +17,10 @@ const StyledImage = styled.img`
 
 const AboutUs = () => {
   return (
-    <div id="aboutUs">
-      <WhyChooseServices />
+    <SectionContainer title="Кои сме ние?" viewHeight={50}>
       <StyledRow gutter={[16, 32]} justify="space-between" wrap>
         <Col xs={24} sm={24} md={12} lg={10}>
           <div>
-            <h2>Кои сме ние?</h2>
             <p>
               Ние сме фирма започнала дейността си в сферата на почистването
               през 2016 г. в Лондон. През 2018 г. стъпихме на българския пазар
@@ -37,12 +34,12 @@ const AboutUs = () => {
           </div>
         </Col>
 
-        <Col xs={24} sm={24} md={12} lg={8} style={{ textAlign: "center" }}>
+        <Col xs={24} sm={24} md={12} lg={8}>
           <StyledImage src={logo_big} alt="logo" />
         </Col>
       </StyledRow>
       {/* <CustomerReviews /> */}
-    </div>
+    </SectionContainer>
   );
 };
 

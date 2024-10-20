@@ -1,6 +1,7 @@
 import { List, Row, Col, FloatButton } from "antd";
 import { FacebookOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import styled from "styled-components";
+import SectionContainer from "./common/SectionContainer";
 
 const contacts = [
   {

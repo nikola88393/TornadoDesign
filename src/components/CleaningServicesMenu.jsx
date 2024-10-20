@@ -2,6 +2,7 @@ import { Card, Modal, Flex } from "antd";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import SectionContainer from "./common/SectionContainer";
 
 const DotLottieIcon = ({ animationSrc }) => {
   return (
@@ -130,7 +131,7 @@ const CleaningServicesCards = () => {
   }, []);
 
   return (
-    <div id="services">
+    <SectionContainer id="services" title="Нашите услуги" viewHeight={100}>
       <StyledCard>
         {services.map((service) => (
           <Card.Grid
@@ -159,7 +160,7 @@ const CleaningServicesCards = () => {
           </Flex>
         </Modal>
       )}
-    </div>
+    </SectionContainer>
   );
 };
 

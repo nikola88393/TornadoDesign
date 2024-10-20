@@ -2,6 +2,7 @@ import { List, Row, Col, Button } from "antd";
 import styled from "styled-components";
 import ContactUsForm from "./ContactUsForm";
 import { CheckCircleOutlined } from "@ant-design/icons";
+import SectionContainer from "./common/SectionContainer";
 
 // Styles for check icons and headings
 const checkIconStyle = {
@@ -59,24 +60,26 @@ const ContactUs = () => {
   );
 
   return (
-    <Row gutter={[64, 64]} style={{ maxWidth: "1300px" }} id="contacts">
-      <Col xs={24} sm={12} xl={12}>
-        <SectionHeading>Отдел</SectionHeading>
-        {renderServicesList(servicesList1)}
-      </Col>
-      <Col xs={24} sm={12} xl={12}>
-        <SectionHeading>Отдел</SectionHeading>
-        {renderServicesList(servicesList2)}
-      </Col>
-      <Col xs={24} sm={12} xl={12}>
-        <SectionHeading>Отдел</SectionHeading>
-        {renderServicesList(servicesList3)}
-      </Col>
-      <Col xs={24} sm={12} xl={12}>
-        <SectionHeading>Изпратете запитване</SectionHeading>
-        <ContactUsForm />
-      </Col>
-    </Row>
+    <SectionContainer title="Контакти" viewHeight={100} id="contacts">
+      <Row gutter={[64, 64]} style={{ maxWidth: "1300px" }}>
+        <Col xs={24} sm={12} xl={12}>
+          <SectionHeading>Отдел</SectionHeading>
+          {renderServicesList(servicesList1)}
+        </Col>
+        <Col xs={24} sm={12} xl={12}>
+          <SectionHeading>Отдел</SectionHeading>
+          {renderServicesList(servicesList2)}
+        </Col>
+        <Col xs={24} sm={12} xl={12}>
+          <SectionHeading>Отдел</SectionHeading>
+          {renderServicesList(servicesList3)}
+        </Col>
+        <Col xs={24} sm={12} xl={12}>
+          <SectionHeading>Изпратете запитване</SectionHeading>
+          <ContactUsForm />
+        </Col>
+      </Row>
+    </SectionContainer>
   );
 };
 
