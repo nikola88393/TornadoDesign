@@ -20,7 +20,7 @@ const StickyHeader = styled(Header)`
   top: 0;
   z-index: 1000; /* Keeps it above other content */
   width: 100%;
-  padding: 50px;
+  padding: 40px;
   border-bottom: 1px solid rgba(5, 5, 5, 0.06);
   @media (max-width: 768px) {
     padding: 20px;
@@ -48,6 +48,10 @@ const App = () => {
       }}
     >
       <Layout>
+        <div
+          id="containerForScrollToTop"
+          style={{ position: "absolute", top: "-10px" }}
+        ></div>
         <StickyHeader>
           <AppHeader />
         </StickyHeader>

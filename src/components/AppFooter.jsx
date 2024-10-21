@@ -6,6 +6,7 @@ import propTypes from "prop-types";
 
 const FooterTextContainer = styled.div`
   display: flex;
+  gap: 10px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: start;
