@@ -33,7 +33,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Remove anchor underline on vertical header */
-.ant-anchor-wrapper-horizontal::before {
+header .ant-anchor-wrapper-horizontal::before,
+header .ant-anchor-ink {
   display: none;
   border: none;
 }

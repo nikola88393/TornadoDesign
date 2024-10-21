@@ -60,7 +60,12 @@ const ContactUs = () => {
   );
 
   return (
-    <SectionContainer title="Контакти" viewHeight={120} id="contacts">
+    <SectionContainer
+      title="Контакти"
+      viewHeight={120}
+      maxHeight={1000}
+      id="contacts"
+    >
       <Row gutter={[64, 64]} style={{ maxWidth: "1300px" }}>
         <Col xs={24} sm={12} xl={12}>
           <SectionHeading>Отдел</SectionHeading>

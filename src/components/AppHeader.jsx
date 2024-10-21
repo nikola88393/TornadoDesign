@@ -39,6 +39,7 @@ const MenuMobileContainer = styled.div`
 const StyledAnchor = styled(Anchor)`
   .ant-anchor-link-title {
     font-weight: 700;
+    font-size: 16px;
   }
 `;
 const anchorLinks = [

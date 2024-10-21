@@ -47,7 +47,12 @@ const FlexContainer = styled(Flex)`
 `;
 const WhyChooseServices = () => {
   return (
-    <SectionContainer title="Защо нас?" viewHeight={50} id="aboutUs">
+    <SectionContainer
+      title="Защо нас?"
+      viewHeight={50}
+      maxHeight={500}
+      id="aboutUs"
+    >
       <FlexContainer align="center" vertical>
         <img src={arrow} alt="arrow in target icon" />
       </FlexContainer>
