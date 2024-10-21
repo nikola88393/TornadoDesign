@@ -10,6 +10,7 @@ import ContactUs from "./components/ContactUs";
 import Faq from "./components/Faq";
 import styled from "styled-components";
 import WhyChooseServices from "./components/WhyChooseServices";
+import LastCallToAction from "./components/LastCallToAction";
 
 const { Header, Footer, Content } = Layout;
 
@@ -34,7 +35,7 @@ const App = () => {
           fontFamily: "Raleway, sans-serif",
           colorPrimary: "#1290cb",
           // experiment wqith overriding other tokens
-          fontSize: 18, // Change base font size
+          fontSize: 16, // Change base font size
           lineHeight: 1.5, // Adjust line height
           Layout: {
             headerBg: "#ffffff",
@@ -67,6 +68,7 @@ const App = () => {
           <AboutUs />
           <ContactUs />
           <Faq />
+          <LastCallToAction />
         </Content>
         <Footer style={{ width: "100%", padding: "0", overflow: "hidden" }}>
           <AppFooter />

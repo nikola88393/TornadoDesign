@@ -16,13 +16,22 @@ const Container = styled.div`
   }
 `;
 
-const SectionContainer = ({ viewHeight, maxHeight, title, children, id }) => {
+const SectionContainer = ({
+  viewHeight,
+  maxHeight,
+  title,
+  children,
+  id,
+  className,
+  style,
+}) => {
   return (
     <Container
+      className={className}
       id={id}
-      style={{ minHeight: `min(${viewHeight}vh, ${maxHeight}px)` }}
+      style={{ ...style, minHeight: `min(${viewHeight}vh, ${maxHeight}px)` }}
     >
-      {title && <h1 style={{ fontWeight: 600 }}>{title.toUpperCase()}</h1>}
+      {title && <h1 style={{ fontWeight: 700 }}>{title.toUpperCase()}</h1>}
       {children}
     </Container>
   );
@@ -34,6 +43,8 @@ SectionContainer.propTypes = {
   title: propTypes.string,
   children: propTypes.node,
   id: propTypes.string,
+  className: propTypes.string,
+  style: propTypes.object,
 };
 
 export default SectionContainer;

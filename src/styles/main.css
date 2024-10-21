@@ -34,7 +34,16 @@ body::-webkit-scrollbar-thumb {
 
 /* Remove anchor underline on vertical header */
 header .ant-anchor-wrapper-horizontal::before,
-header .ant-anchor-ink {
+header .ant-anchor-ink,
+.last-call-to-action .ant-anchor-wrapper-horizontal::before,
+.last-call-to-action .ant-anchor-ink {
   display: none;
   border: none;
+}
+
+.last-call-to-action
+  .ant-anchor-wrapper:not(.ant-anchor-wrapper-horizontal).ant-anchor::before {
+  /* Your new styles here */
+  content: "" !important; /* Example override */
+  /* Add other properties you want to override */
 }
