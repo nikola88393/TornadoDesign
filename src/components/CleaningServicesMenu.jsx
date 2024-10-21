@@ -131,7 +131,7 @@ const CleaningServicesCards = () => {
   }, []);
 
   return (
-    <SectionContainer id="services" title="Нашите услуги" viewHeight={100}>
+    <SectionContainer id="services" title="Нашите услуги" viewHeight={180}>
       <StyledCard>
         {services.map((service) => (
           <Card.Grid

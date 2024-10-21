@@ -17,7 +17,7 @@ const StyledImage = styled.img`
 
 const AboutUs = () => {
   return (
-    <SectionContainer title="Кои сме ние?" viewHeight={50}>
+    <SectionContainer title="Кои сме ние?" viewHeight={80}>
       <StyledRow gutter={[16, 32]} justify="space-between" wrap>
         <Col xs={24} sm={24} md={12} lg={10}>
           <div>

@@ -74,7 +74,7 @@ const collapseItems = [
 
 const Faq = () => {
   return (
-    <SectionContainer id="faq" title="Често задавани въпроси" viewHeight={60}>
+    <SectionContainer id="faq" title="Често задавани въпроси" viewHeight={120}>
       <Row
         style={{
           padding: "20px",
