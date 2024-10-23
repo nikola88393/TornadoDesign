@@ -63,7 +63,7 @@ const ContactUs = () => {
     <SectionContainer
       title="Контакти"
       viewHeight={120}
-      maxHeight={1000}
+      maxHeight={900}
       id="contacts"
     >
       <Row gutter={[64, 64]} style={{ maxWidth: "1300px" }}>

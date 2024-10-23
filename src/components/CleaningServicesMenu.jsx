@@ -135,7 +135,7 @@ const CleaningServicesCards = () => {
       id="services"
       title="Нашите услуги"
       viewHeight={180}
-      maxHeight={1400}
+      maxHeight={1200}
     >
       <StyledCard>
         {services.map((service) => (

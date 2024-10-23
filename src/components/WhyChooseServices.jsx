@@ -50,7 +50,7 @@ const WhyChooseServices = () => {
     <SectionContainer
       title="Защо нас?"
       viewHeight={50}
-      maxHeight={500}
+      maxHeight={400}
       id="aboutUs"
     >
       <FlexContainer align="center" vertical>
