@@ -1,6 +1,19 @@
 import SectionContainer from "./common/SectionContainer";
 import { Anchor, ConfigProvider } from "antd";
+// import styled from "styled-components";
 
+const anchorItem = [
+  {
+    key: 1,
+    title: "Начало",
+    href: "#hero",
+  },
+];
+
+// const StyledAnchorLink = styled(Anchor.Link)`
+//   border: 1px solid red;
+//   paddingblock: 10px;
+// `;
 const LastCallToAction = () => {
   return (
     <ConfigProvider
@@ -10,7 +23,8 @@ const LastCallToAction = () => {
             // remove underline from anchor and active anchor links
             colorSplit: "none",
             colorPrimary: "none",
-            padding: "0",
+            linkPaddingBlock: "10px",
+            linkPaddingInline: "20px",
           },
         },
       }}
@@ -26,10 +40,12 @@ const LastCallToAction = () => {
           дом или офис.
         </p>
         <p>Свържете се с нас сега и вземете своята специална оферта!</p>
-        {/* using deprecated anchor child because newer methods with 'items' props causes issues  */}
-        <Anchor affix={false}>
-          <Anchor.Link href="#hero" title="Начало"></Anchor.Link>
-        </Anchor>
+        {/* using deprecated anchor child because newer methods with 'items' props causes issues;
+        use in case newer version jumps to the bottom of the page when scrolling to the top  */}
+        {/* <Anchor affix={false}>
+          <StyledAnchorLink href="#hero" title="Начало" />
+        </Anchor> */}
+        <Anchor items={anchorItem} />
       </SectionContainer>
     </ConfigProvider>
   );
