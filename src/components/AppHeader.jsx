@@ -1,4 +1,4 @@
-import { Button, Drawer, Anchor } from "antd";
+import { Button, Drawer, Anchor, ConfigProvider } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import logo from "../assets/tornado_logo.png"; // optional for custom styling
 import logoText from "../assets/tornado_logo_text.png"; // optional for custom styling
@@ -20,7 +20,6 @@ const Logo = styled.div`
 
 const MenuDesktopContainer = styled.div`
   display: flex;
-  // width: 100%;
   @media (max-width: 768px) {
     display: none;
   }
@@ -82,35 +81,45 @@ const AppHeader = () => {
   };
 
   return (
-    <HeaderContainer>
-      <Logo>
-        <img src={logo} alt="logo" height={50} />
-        <img src={logoText} alt="logo" height={30} />
-      </Logo>
-      <MenuDesktopContainer>
-        <StyledAnchor
-          targetOffset={80}
-          direction="horizontal"
-          style={{ height: "100%" }}
-          items={anchorLinks}
-        />
-      </MenuDesktopContainer>
-      <MenuMobileContainer>
-        <Button
-          variant="link"
-          size="large"
-          icon={<MenuOutlined />}
-          onClick={showDrawer}
-        ></Button>
-        <Drawer placement="right" onClose={onClose} open={visible}>
+    <ConfigProvider
+      theme={{
+        token: {
+          Anchor: {
+            colorSplit: "none",
+            lineWidthBold: "0",
+          },
+        },
+      }}
+    >
+      <HeaderContainer>
+        <Logo>
+          <img src={logo} alt="logo" height={50} />
+          <img src={logoText} alt="logo" height={30} />
+        </Logo>
+        <MenuDesktopContainer>
           <StyledAnchor
             targetOffset={80}
-            onClick={onClose}
+            direction="horizontal"
             items={anchorLinks}
           />
-        </Drawer>
-      </MenuMobileContainer>
-    </HeaderContainer>
+        </MenuDesktopContainer>
+        <MenuMobileContainer>
+          <Button
+            size="large"
+            type="text"
+            icon={<MenuOutlined />}
+            onClick={showDrawer}
+          ></Button>
+          <Drawer placement="right" onClose={onClose} open={visible}>
+            <StyledAnchor
+              targetOffset={80}
+              onClick={onClose}
+              items={anchorLinks}
+            />
+          </Drawer>
+        </MenuMobileContainer>
+      </HeaderContainer>
+    </ConfigProvider>
   );
 };
 
