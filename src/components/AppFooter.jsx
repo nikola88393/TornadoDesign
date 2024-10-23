@@ -1,9 +1,54 @@
-import { List, FloatButton, ConfigProvider } from "antd";
+import { FloatButton, ConfigProvider, Anchor } from "antd";
 import { ArrowUpOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 import SectionContainer from "./common/SectionContainer";
 import propTypes from "prop-types";
 
+const AnchorServicesMenu = [
+  {
+    key: 1,
+    title: "Основно почистване",
+    href: "#services",
+  },
+  {
+    key: 2,
+    title: "Почистване след ремонт",
+    href: "#services",
+  },
+  {
+    key: 3,
+    title: "Пране на мека мебел",
+    href: "#services",
+  },
+  {
+    key: 4,
+    title: "Пране на килими",
+    href: "#services",
+  },
+];
+
+const AnchorInfoMenu = [
+  {
+    key: 1,
+    title: "ЧЗВ",
+    href: "#faq",
+  },
+  {
+    key: 2,
+    title: "Контакти",
+    href: "#contacts",
+  },
+  {
+    key: 3,
+    title: "Общи условия",
+    href: "#",
+  },
+  {
+    key: 4,
+    title: "Политика за поверителност",
+    href: "#",
+  },
+];
 const FooterTextContainer = styled.div`
   display: flex;
   gap: 10px;
@@ -15,6 +60,8 @@ const FooterTextContainer = styled.div`
 const FooterMenusContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+  margin: 20px 0;
+  gap: 20px;
   width: 50%;
   @media (max-width: 768px) {
     width: 100%;
@@ -30,18 +77,6 @@ const FooterContainer = styled.div`
   max-width: 100vw;
   @media (max-width: 768px) {
     flex-direction: column-reverse;
-  }
-`;
-const StyledList = styled(List)`
-  padding: 0;
-  margin: 0;
-  color: white;
-`;
-const StyledListItem = styled(List.Item)`
-  .ant-list-item {
-    padding: 0;
-    margin: 0;
-    color: white;
   }
 `;
 const ListItemHeading = styled.h1`
@@ -74,11 +109,19 @@ const AppFooter = () => {
               colorText: "#fff",
               colorSplit: "none",
             },
-            // Seed Token
+            Anchor: {
+              colorSplit: "none",
+              colorText: "white",
+              colorPrimary: "white",
+              lineWidthBold: "0",
+              padding: "0",
+            },
           },
         }}
       >
-        <div style={{ overflow: "hidden", lineHeight: "0" }}>
+        <div
+          style={{ overflow: "hidden", lineHeight: "0", marginBottom: "-2px" }}
+        >
           <svg
             viewBox="0 0 1920 80"
             xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +139,7 @@ const AppFooter = () => {
           style={{
             backgroundColor: "#1290cb",
             color: "white",
-            padding: "0 50px 50px 50px",
+            padding: "10px 50px 50px 50px",
             margin: "0",
           }}
         >
@@ -107,12 +150,17 @@ const AppFooter = () => {
                 2016 г. Работим с екологични продукти и съвременни техники, за
                 да гарантираме безупречна чистота.
               </p>
-              <div style={{ width: "30px" }}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path
-                    fill="#fff"
-                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
-                  />
+              <div style={{ width: "25px" }}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  style={{
+                    transition: "fill 0.3s ease", // Smooth transition for the color
+                    fill: "#ffffff", // Initial color
+                  }}
+                  className="svg-icon-facebook" // Optional class for CSS styling
+                >
+                  <path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z" />
                 </svg>
               </div>
 
@@ -126,36 +174,14 @@ const AppFooter = () => {
               <p>Copyright © 2024 Tornado Services</p>
             </FooterTextContainer>
             <FooterMenusContainer>
-              <StyledList>
+              <div>
                 <ListItemHeading>УСЛУГИ</ListItemHeading>
-                <StyledListItem>
-                  <p>Основно почистване</p>
-                </StyledListItem>
-                <StyledListItem>
-                  <p>Почистване след ремонт</p>
-                </StyledListItem>
-                <StyledListItem>
-                  <p>Пране на мека мебел</p>
-                </StyledListItem>
-                <StyledListItem>
-                  <p>Пране на килими</p>
-                </StyledListItem>
-              </StyledList>
-              <StyledList>
+                <Anchor direction="vertical" items={AnchorServicesMenu} />
+              </div>
+              <div>
                 <ListItemHeading>ЗА КЛИЕНТА</ListItemHeading>
-                <StyledListItem>
-                  <p>ЧЗВ</p>
-                </StyledListItem>
-                <StyledListItem>
-                  <p>Контакти</p>
-                </StyledListItem>
-                <StyledListItem>
-                  <p>Общи условия</p>
-                </StyledListItem>
-                <StyledListItem>
-                  <p>Политика за поверителност</p>
-                </StyledListItem>
-              </StyledList>
+                <Anchor direction="vertical" items={AnchorInfoMenu} />
+              </div>
             </FooterMenusContainer>
 
             <FloatButton.BackTop duration={700} icon={<ArrowUpOutlined />} />
