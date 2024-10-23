@@ -32,7 +32,7 @@ const App = () => {
     <ConfigProvider
       theme={{
         token: {
-          fontFamily: "Raleway, sans-serif",
+          fontFamily: "Montserrat, sans-serif",
           colorPrimary: "#1290cb",
           // experiment wqith overriding other tokens
           fontSize: 16, // Change base font size

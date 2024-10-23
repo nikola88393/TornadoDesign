@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.ant-typography-title,
-.ant-card-head-title,
-.ant-modal-title,
-.ant-anchor {
-  font-family: "Montserrat", sans-serif !important; /* For headings */
-}
-
 h1 {
   font-size: 33.12px;
 }
@@ -30,20 +17,4 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background-color: #1290cb;
   border-radius: 6px;
-}
-
-/* Remove anchor underline on vertical header */
-header .ant-anchor-wrapper-horizontal::before,
-header .ant-anchor-ink,
-.last-call-to-action .ant-anchor-wrapper-horizontal::before,
-.last-call-to-action .ant-anchor-ink {
-  display: none;
-  border: none;
-}
-
-.last-call-to-action
-  .ant-anchor-wrapper:not(.ant-anchor-wrapper-horizontal).ant-anchor::before {
-  /* Your new styles here */
-  content: "" !important; /* Example override */
-  /* Add other properties you want to override */
 }
