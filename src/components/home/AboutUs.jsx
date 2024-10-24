@@ -1,8 +1,8 @@
 import { Row, Col } from "antd";
 import styled from "styled-components";
-import logo_big from "../assets/tornado_logo_big.png";
+import logo_big from "../../assets/tornado_logo_big.png";
 // import CustomerReviews from "./CustomerReviews";
-import SectionContainer from "./common/SectionContainer";
+import SectionContainer from "../common/SectionContainer";
 
 const StyledRow = styled(Row)`
   padding: 20px;

@@ -2,7 +2,7 @@ import { List, Row, Col, Button } from "antd";
 import styled from "styled-components";
 import ContactUsForm from "./ContactUsForm";
 import { CheckCircleOutlined } from "@ant-design/icons";
-import SectionContainer from "./common/SectionContainer";
+import SectionContainer from "../common/SectionContainer";
 
 // Styles for check icons and headings
 const checkIconStyle = {

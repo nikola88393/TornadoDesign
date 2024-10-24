@@ -1,4 +1,4 @@
-import SectionContainer from "./common/SectionContainer";
+import SectionContainer from "../common/SectionContainer";
 import { Anchor, ConfigProvider } from "antd";
 // import styled from "styled-components";
 

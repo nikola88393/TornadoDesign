@@ -1,5 +1,5 @@
 import { Collapse, Row, Col, Flex } from "antd";
-import SectionContainer from "./common/SectionContainer";
+import SectionContainer from "../common/SectionContainer";
 
 const collapseItems = [
   {

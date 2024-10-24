@@ -1,7 +1,7 @@
 import { Row, Col, Flex } from "antd";
-import arrow from "../assets/arrow-in-the-target.svg";
+import arrow from "../../assets/arrow-in-the-target.svg";
 import styled from "styled-components";
-import SectionContainer from "./common/SectionContainer";
+import SectionContainer from "../common/SectionContainer";
 const reasonsToChooseUs = [
   {
     number: "01",

@@ -2,7 +2,7 @@ import { Card, Modal, Flex } from "antd";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import SectionContainer from "./common/SectionContainer";
+import SectionContainer from "../common/SectionContainer";
 
 const DotLottieIcon = ({ animationSrc }) => {
   return (

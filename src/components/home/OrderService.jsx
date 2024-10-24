@@ -1,7 +1,7 @@
 import { Button, Form, Select, Space } from "antd";
 import { useState } from "react";
 import styled from "styled-components";
-import livingRoomHero from "../assets/living-room-hero.jpg";
+import livingRoomHero from "../../assets/living-room-hero.jpg";
 
 const servicesTest = [
   {
