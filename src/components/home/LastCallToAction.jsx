@@ -1,19 +1,40 @@
 import SectionContainer from "../common/SectionContainer";
 import { Anchor, ConfigProvider } from "antd";
-// import styled from "styled-components";
+import { ArrowUpOutlined } from "@ant-design/icons";
+import styled from "styled-components";
 
 const anchorItem = [
   {
     key: 1,
-    title: "Начало",
+    title: <ArrowUpOutlined className="animated-arrow" />,
     href: "#hero",
   },
 ];
 
-// const StyledAnchorLink = styled(Anchor.Link)`
-//   border: 1px solid red;
-//   paddingblock: 10px;
-// `;
+const StyledAnchor = styled(Anchor)`
+  .animated-arrow {
+    animation: bounce 2s infinite;
+    font-size: 25px;
+    color: #1290cb;
+    padding: 10px;
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px); /* Bouncing up */
+    }
+    60% {
+      transform: translateY(-5px); /* Bouncing down */
+    }
+  }
+`;
 const LastCallToAction = () => {
   return (
     <ConfigProvider
@@ -45,7 +66,7 @@ const LastCallToAction = () => {
         {/* <Anchor affix={false}>
           <StyledAnchorLink href="#hero" title="Начало" />
         </Anchor> */}
-        <Anchor items={anchorItem} />
+        <StyledAnchor style={{ fontSize: "30px" }} items={anchorItem} />
       </SectionContainer>
     </ConfigProvider>
   );
