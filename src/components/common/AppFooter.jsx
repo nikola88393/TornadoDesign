@@ -91,7 +91,10 @@ const PaymentMethodIcon = ({ src }) => {
     <img
       src={src}
       alt="Payment method"
-      style={{ width: "50px", height: "34.29px" }}
+      style={{
+        width: "50px",
+        height: "34.29px",
+      }}
     />
   );
 };
@@ -171,7 +174,7 @@ const AppFooter = () => {
                   </svg>
                 </div>
 
-                <div>
+                <div style={{ marginLeft: "-4px" }}>
                   <PaymentMethodIcon src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/7v0ju2za034-353%3A4566?alt=media&token=ec55f6aa-26ba-4f1c-b994-bba8cd628ea2" />
                   <PaymentMethodIcon src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/ana4ia1r3ep-353%3A4444?alt=media&token=5e7873ba-6683-4598-af22-9838a34482a8" />
                   <PaymentMethodIcon src="https://firebasestorage.googleapis.com/v0/b/unify-v3-copy.appspot.com/o/nkyjz29hsud-353%3A4479?alt=media&token=c49330a7-29fe-4bc1-8e5d-0cc189265074" />

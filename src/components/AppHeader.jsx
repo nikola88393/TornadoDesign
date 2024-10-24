@@ -23,6 +23,7 @@ const StickyHeader = styled(Header)`
   width: 100%;
   padding: 40px;
   border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  border: 1px solid r;
   @media (max-width: 768px) {
     padding: 20px;
   }
