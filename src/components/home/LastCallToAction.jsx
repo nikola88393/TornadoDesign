@@ -56,11 +56,14 @@ const LastCallToAction = () => {
         viewHeight={40}
         maxHeight={500}
       >
-        <p>
+        <p style={{ textAlign: "center" }}>
           Поръчайте професионално почистване днес и се насладете на чист и свеж
           дом или офис.
         </p>
-        <p>Свържете се с нас сега и вземете своята специална оферта!</p>
+        <p style={{ textAlign: "center" }}>
+          {" "}
+          Свържете се с нас сега и вземете своята специална оферта!
+        </p>
         {/* using deprecated anchor child because newer methods with 'items' props causes issues;
         use in case newer version jumps to the bottom of the page when scrolling to the top  */}
         {/* <Anchor affix={false}>

@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
   gap: 20px;
   padding: 0 20px;
-  margin: 20px 0;
+  margin: 50px 0;
   @media (max-width: 768px) {
     margin: 100px 0;
   }
@@ -31,7 +31,11 @@ const SectionContainer = ({
       id={id}
       style={{ ...style, minHeight: `min(${viewHeight}vh, ${maxHeight}px)` }}
     >
-      {title && <h1 style={{ fontWeight: 700 }}>{title.toUpperCase()}</h1>}
+      {title && (
+        <h1 style={{ fontWeight: 700, textAlign: "center" }}>
+          {title.toUpperCase()}
+        </h1>
+      )}
       {children}
     </Container>
   );

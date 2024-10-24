@@ -1,7 +1,7 @@
 import { Layout } from "antd";
 import AppHeader from "../AppHeader";
 import OrderService from "./OrderService";
-import CleaningServicesMenu from "./CleaningServicesMenu";
+import CleaningServicesMenu from "./CleaningServices";
 import AboutUs from "./AboutUs";
 import AppFooter from "../common/AppFooter";
 import ContactUs from "./ContactUs";

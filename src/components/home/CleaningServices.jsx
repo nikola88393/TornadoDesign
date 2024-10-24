@@ -146,8 +146,10 @@ const CleaningServicesCards = () => {
           >
             <Flex align="center" vertical>
               <DotLottieIcon animationSrc={service.animationSrc} />
-              <h2>{service.title}</h2>
-              <p style={{ color: "#1290cb" }}>Още подробности</p>
+              <h2 style={{ textAlign: "center" }}>{service.title}</h2>
+              <p style={{ color: "#1290cb", textAlign: "center" }}>
+                Още подробности
+              </p>
             </Flex>
           </Card.Grid>
         ))}

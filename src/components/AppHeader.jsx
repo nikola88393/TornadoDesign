@@ -120,7 +120,10 @@ const AppHeader = () => {
               direction="horizontal"
               items={anchorLinks}
             />
-            <Button type="text" icon={<UserOutlined />}></Button>
+            <Button
+              type="text"
+              icon={<UserOutlined style={{ fontSize: "25px" }} />}
+            ></Button>
           </MenuDesktopContainer>
           <MenuMobileContainer>
             <Button
@@ -135,7 +138,10 @@ const AppHeader = () => {
                 onClick={onClose}
                 items={anchorLinks}
               />
-              <Button type="text" icon={<UserOutlined />}></Button>
+              <Button
+                type="text"
+                icon={<UserOutlined style={{ fontSize: "25px" }} />}
+              ></Button>
             </Drawer>
           </MenuMobileContainer>
         </HeaderContainer>
