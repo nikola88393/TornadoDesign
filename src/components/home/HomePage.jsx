@@ -15,15 +15,17 @@ const HomePage = () => {
   return (
     <Layout>
       <AppHeader />
-      <Content>
-        <OrderService />
-        <CleaningServicesMenu />
-        <WhyChooseServices />
-        <AboutUs />
-        <ContactUs />
-        <Faq />
-        <LastCallToAction />
-      </Content>
+      <Layout>
+        <Content>
+          <OrderService />
+          <CleaningServicesMenu />
+          <WhyChooseServices />
+          <AboutUs />
+          <ContactUs />
+          <Faq />
+          <LastCallToAction />
+        </Content>
+      </Layout>
       <AppFooter />
     </Layout>
   );
