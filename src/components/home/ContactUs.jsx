@@ -66,7 +66,7 @@ const ContactUs = () => {
       maxHeight={900}
       id="contacts"
     >
-      <Row gutter={[64, 64]} style={{ maxWidth: "1300px" }}>
+      <Row gutter={[64, 64]} style={{ maxWidth: "1300px", width: "100%" }}>
         <Col xs={24} sm={12} xl={12}>
           <SectionHeading>Отдел</SectionHeading>
           {renderServicesList(servicesList1)}

@@ -120,6 +120,7 @@ const AppHeader = () => {
               targetOffset={80}
               direction="horizontal"
               items={anchorLinks}
+              affix={false}
             />
             <Button
               type="text"
@@ -133,11 +134,17 @@ const AppHeader = () => {
               icon={<MenuOutlined />}
               onClick={showDrawer}
             ></Button>
-            <Drawer placement="right" onClose={onClose} open={visible}>
+            <Drawer
+              width={250}
+              placement="right"
+              onClose={onClose}
+              open={visible}
+            >
               <StyledAnchor
                 targetOffset={80}
                 onClick={onClose}
                 items={anchorLinks}
+                affix={false}
               />
               <Button
                 type="text"

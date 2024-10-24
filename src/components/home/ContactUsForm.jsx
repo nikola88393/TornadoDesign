@@ -7,7 +7,7 @@ const StyledButton = styled(Button)`
 
 const ContactUsForm = () => {
   return (
-    <Form className="formContainer">
+    <Form>
       <Form.Item
         name="name"
         rules={[{ required: true, message: "Моля, въведете вашето име!" }]}
