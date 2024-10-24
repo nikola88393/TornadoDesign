@@ -140,7 +140,7 @@ const OrderService = () => {
 
   return (
     <HeroContainer id="hero">
-      <FormContainerWrapper>
+      {/* <FormContainerWrapper>
         <OpacityLayer>
           <HeroText>
             <h1>
@@ -230,7 +230,7 @@ const OrderService = () => {
             </div>
           </InfoContainer>
         </OpacityLayer>
-      </FormContainerWrapper>
+      </FormContainerWrapper> */}
     </HeroContainer>
   );
 };
