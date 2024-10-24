@@ -1,10 +1,17 @@
 import { Collapse, Row, Col, Flex } from "antd";
 import SectionContainer from "../common/SectionContainer";
+import styled from "styled-components";
 
+const UnderlinedCollapse = styled(Collapse)`
+  .ant-collapse-header {
+    border-bottom: 1px solid #f0f0f0;
+`;
 const collapseItems = [
   {
     key: "1",
-    label: <strong>Какви услуги предлагате?</strong>,
+    label: (
+      <p style={{ fontWeight: "600", margin: "0" }}>Какви услуги предлагате?</p>
+    ),
     children: (
       <p>
         Ние предлагаме широк спектър от почистващи услуги, включително основно и
@@ -16,7 +23,11 @@ const collapseItems = [
   },
   {
     key: "2",
-    label: <strong>Колко време отнема почистването?</strong>,
+    label: (
+      <p style={{ fontWeight: "600", margin: "0" }}>
+        Колко време отнема почистването?
+      </p>
+    ),
     children: (
       <p>
         Времето за почистване зависи от големината на помещението и вида на
@@ -28,7 +39,11 @@ const collapseItems = [
   },
   {
     key: "3",
-    label: <strong>Какво да правя, ако не съм доволен от почистването?</strong>,
+    label: (
+      <p style={{ fontWeight: "600", margin: "0" }}>
+        Какво да правя, ако не съм доволен от почистването?
+      </p>
+    ),
     children: (
       <p>
         Вашето удовлетворение е наш приоритет! Ако по някаква причина не сте
@@ -39,7 +54,11 @@ const collapseItems = [
   },
   {
     key: "4",
-    label: <strong>Как се осигурява качеството на почистването?</strong>,
+    label: (
+      <p style={{ fontWeight: "600", margin: "0" }}>
+        Как се осигурява качеството на почистването?
+      </p>
+    ),
     children: (
       <p>
         Нашият екип от професионалисти преминава обучение и се грижи за високото
@@ -51,7 +70,11 @@ const collapseItems = [
   },
   {
     key: "5",
-    label: <strong>Как мога да направя резервация?</strong>,
+    label: (
+      <p style={{ fontWeight: "600", margin: "0" }}>
+        Как мога да направя резервация?
+      </p>
+    ),
     children: (
       <p>
         Можете лесно да направите резервация чрез нашия онлайн формуляр, като
@@ -62,7 +85,11 @@ const collapseItems = [
   },
   {
     key: "6",
-    label: <strong>Работите ли през почивните дни?</strong>,
+    label: (
+      <p style={{ fontWeight: "600", margin: "0" }}>
+        Работите ли през почивните дни?
+      </p>
+    ),
     children: (
       <p>
         Да, нашите услуги са достъпни през всички дни от седмицата, включително
@@ -104,7 +131,7 @@ const Faq = () => {
           </Flex>
         </Col>
         <Col xs={24} sm={24} md={12} lg={12}>
-          <Collapse
+          <UnderlinedCollapse
             expandIconPosition="end"
             ghost
             accordion
